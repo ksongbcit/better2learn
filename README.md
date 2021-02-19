@@ -1,5 +1,7 @@
 ## My Web Application (Title)
 Ethan liu
+## My Web Application (Better2Learn)
+
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
@@ -42,3 +44,5 @@ Tips for file naming files and folders:
 * use lowercase with no spaces
 * use dashes (not underscore) for word separation
 
+Collaborators:
+Avneet Sandhu
