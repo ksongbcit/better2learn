@@ -1,0 +1,31 @@
+#course-container {
+    display: flex;
+    list-style: none;
+    flex-flow: wrap;
+    justify-content: flex-start;
+}
+
+#course-container li {
+    background-color:cornflowerblue;
+    color: white;
+    text-align: center;
+    width: 130px;
+    height: 35px;
+    font-weight: bold;
+    border-radius: 17px;
+    margin: 5px 10px 5px 10px;
+}
+
+#course-container a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    width: 130px;
+    height: 35px;
+    border-radius: 17px;
+    padding-top: 4px;
+}
+
+#course-container a:hover {
+    background: rgb(136, 197, 255);
+}
