@@ -16,6 +16,7 @@
   <!-- Optional styles and scripts of your own -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet"/>
+  <link rel="stylesheet" href="styles/bottom-nav.css"/>
 
 </head>
 
@@ -70,20 +71,26 @@
     <h1 class="display-4">Welcome to Better2Learn!</h1>
   </div>
 
-  <div>
+  <div id="bottom-nav">
     <nav class="navbar fixed-bottom navbar-light bg-light">
-      <div class="container-fluid">
-        
-          <div class="navbar-nav">
-            <span class="material-icons-outlined">
-              home
-              </span>
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="Schedule.html">Schedule</a>
-            <a class="nav-link" href="ProgressTracker.html">Progress Tracker</a>
-            <a class="nav-link" href="GradeBook.html">Grade Book</a>
-          </div>
-        
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <span class="material-icons">home</span>
+          <a class="nav-link" aria-current="true" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <span class="material-icons">calendar_today</span>
+          <a class="nav-link" href="Schedule.html">Schedule</a>
+        </li>
+        <li class="nav-item">
+          <span class="material-icons">timeline</span>
+          <a class="nav-link" href="ProgressTracker.html">Progress Tracker</a>
+        </li>
+        <li class="nav-item">
+          <span class="material-icons">menu_book</span>
+          <a class="nav-link" href="GradeBook.html">Grade Book</a>
+        </li>
+      </ul>
     </nav>
   </div>
 

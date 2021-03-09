@@ -1,0 +1,14 @@
+#bottom-nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+#bottom-nav li {
+    text-align: center;
+}
+
+.material-icons {
+    color: darkgrey;
+    font-size: 30pt;
+}
