@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
   <!-- Optional styles and scripts of your own -->
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -41,7 +41,7 @@
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           <li><a class="dropdown-item" href="#">Profile</a></li>
           <li><a class="dropdown-item" href="#">Settings</a></li>
-          <li><a class="dropdown-item" href="#">Log Out</a></li>
+          <li><a class="dropdown-item" href="index.html">Log Out</a></li>
         </ul>
       </div>
     </div>
@@ -52,9 +52,13 @@
   <!-- Page Contents -->
 
   <div class="container p-3 d-flex flex-column align-items-center">
-    <h1 class="display-4">Schedule</h1>
+    <h1 class="display-4">Welcome to Better2Learn!</h1>
+    <p class="fs-3">Sign Up or Log In</p>
+
 
   </div>
+  <div id="firebaseui-auth-container"></div>
+  <div id="loader">Loading...</div>
 
 
   <!-- END of Page Contents -->
@@ -66,7 +70,7 @@
       <ul class="nav">
         <li class="nav-item px-3">
           <span class="material-icons px-3">home</span>
-          <a class="nav-link p-0" aria-current="true" href="index.html">Home</a>
+          <a class="nav-link p-0" aria-current="true" href="main.html">Home</a>
         </li>
         <li class="nav-item px-3">
           <span class="material-icons px-3">calendar_today</span>
@@ -92,10 +96,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
   </script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
 
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
+
+  <script src="./scripts/firebase-api.js"></script>
+  <script src="./scripts/login.js"></script>
 
 </body>
 
