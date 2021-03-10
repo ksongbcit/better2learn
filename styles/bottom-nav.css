@@ -6,9 +6,14 @@
 
 #bottom-nav li {
     text-align: center;
+    padding: 0 1em 0 1em;
 }
 
 .material-icons {
     color: darkgrey;
     font-size: 30pt;
+}
+
+.nav-pills a.nav-link.active {
+    background-color: cornflowerblue;
 }
