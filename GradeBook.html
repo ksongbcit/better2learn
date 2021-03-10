@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>My BCIT Project</title>
+  <title>Better2Learn</title>
   <meta name="comp1800 boilerplate code" content="my bcit project">
   <meta name="author" content="BCIT">
 
@@ -11,10 +11,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles/gradebook.css" />
 
   <!-- Optional styles and scripts of your own -->
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="styles/bottom-nav.css" rel="stylesheet" />
+  <link href="styles/gradebook.css" rel="stylesheet" />
 
 </head>
 
@@ -23,51 +25,32 @@
   <!-------------------------------------->
   <!-- The following is HTML for layout -->
   <!-------------------------------------->
+
   <!-- Header Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Better2Learn</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="d-flex justify-content-start" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="true" href="GradeBook.html">GradeBook</a>
-          </li>
+
+  <nav class="navbar navbar-expand navbar-light bg-light">
+    <div class="container-fluid d-flex flex-row">
+      <div class="justify-content-start">
+        <i class="material-icons align-middle px-3 justify-content-start">dashboard</i><span
+          class="align-middle fs-3">B2L</span>
+      </div>
+      <div class="dropdown dropstart ">
+        <a class="nav-link justify-content-end" href="#" id="navbarDropdownMenuLink" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="material-icons">menu</span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Log Out</a></li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
 
-  <div class="container">
-    <h1 class="display-4">Welcome to Better2Learn!</h1>
-  </div>
+  <!-- END of Header Navigation Bar -->
+
+  <!-- Page Contents -->
 
   <!-- march 7 -->
 
@@ -82,26 +65,37 @@
     <li><a href="#">COMP 1800</a></li>
   </ul>
 
-  <!-- what I added -->
+  <!-- what Avneet added -->
 
-  <div>
-    <nav class="navbar fixed-bottom navbar-light bg-light">
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+  <!-- END of Page Contents -->
+
+  <!-- Footer Navigation Bar -->
+
+  <div id="bottom-nav" class="d-flex flex-row">
+    <nav class="navbar fixed-bottom navbar-light bg-light justify-content-evenly">
+      <ul class="nav">
+        <li class="nav-item px-3">
+          <span class="material-icons px-3">home</span>
+          <a class="nav-link p-0" aria-current="true" href="index.html">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Schedule.html">Schedule</a>
+        <li class="nav-item px-3">
+          <span class="material-icons px-3">calendar_today</span>
+          <a class="nav-link p-0" href="Schedule.html">Schedule</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ProgressTracker.html">Progress Tracker</a>
+        <li class="nav-item px-3">
+          <span class="material-icons px-3">timeline</span>
+          <a class="nav-link p-0" href="ProgressTracker.html">Tracker</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="GradeBook.html">GradeBook</a>
+        <li class="nav-item px-3">
+          <span class="material-icons px-3">menu_book</span>
+          <a class="nav-link p-0" href="GradeBook.html">Grades</a>
         </li>
       </ul>
     </nav>
   </div>
+
+  <!-- END of Footer Navigation Bar -->
 
   <!----------------------------------------------->
   <!-- JS: Boostrap, Firebase, API related    -->
