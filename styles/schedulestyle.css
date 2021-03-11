@@ -1,0 +1,31 @@
+.container {
+    display:grid;
+    grid-template-columns: 75% 25%;
+    width: 100%;
+    column-gap: 8%;
+    
+}
+
+.weekly {
+    grid-column: span 1;
+    float: left;
+    margin: 0;
+    border: solid grey 2px;
+    border-radius: 2%;
+}
+
+.sidebar {
+    grid-column: 2;
+    border: grey 2px solid;
+    border-radius: 2%;
+
+}
+
+td {
+    height: 500px;
+}
+
+table {
+    margin: 3%;
+}
+
