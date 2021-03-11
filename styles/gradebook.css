@@ -14,6 +14,7 @@
     font-weight: bold;
     border-radius: 17px;
     margin: 5px 10px 5px 10px;
+    font-size: 14pt;
 }
 
 #course-container a {
@@ -28,4 +29,8 @@
 
 #course-container a:hover {
     background: rgb(136, 197, 255);
+}
+
+.course {
+    display: none;
 }
