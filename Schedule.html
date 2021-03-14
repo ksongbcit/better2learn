@@ -16,7 +16,7 @@
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="styles/bottom-nav.css" rel="stylesheet" />
-  <link href="styles/schedulestyle.css" rel="stylesheet"/>
+  <link href="styles/schedulestyle.css" rel="stylesheet" />
 
 </head>
 
@@ -61,83 +61,95 @@
 
 
     <div class="container">
-    <div class="weekly">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">Sunday</th>
-          <th scope="col">Monday</th>
-          <th scope="col">Tuesday</th>
-          <th scope="col">Wednesday</th>
-          <th scope="col">Thursday</th>
-          <th scope="col">Friday</th>
-          <th scope="col">Saturday</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Homework</td>
-          <td>Comp1113, Comp1510</td>
-          <td>Comp1113, Comp1537</td>
-          <td>Comp1510, Comp1537</td>
-          <td>Comp1510, Comp1712</td>
-          <td>Comp1510 Quiz</td>
-          <td>Homework</td>
-        </tr>
-      </tbody>
-    </table>
+      <div class="weekly">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Sunday</th>
+              <th scope="col">Monday</th>
+              <th scope="col">Tuesday</th>
+              <th scope="col">Wednesday</th>
+              <th scope="col">Thursday</th>
+              <th scope="col">Friday</th>
+              <th scope="col">Saturday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Homework</td>
+              <td>Comp1113, Comp1510</td>
+              <td>Comp1113, Comp1537</td>
+              <td>Comp1510, Comp1537</td>
+              <td>Comp1510, Comp1712</td>
+              <td>Comp1510 Quiz</td>
+              <td>Homework</td>
+            </tr>
+          </tbody>
+        </table>
 
-  </div>
+      </div>
 
-    <div class="sidebar">
-      <h1 class="daily">Today's Schedule</h1>
+      <div class="sidebar">
+        <h1 class="daily">Today's Schedule</h1>
+
+      </div>
 
     </div>
 
-  </div>
 
 
+    <!-- END of Page Contents -->
 
-  <!-- END of Page Contents -->
+    <!-- Footer Navigation Bar -->
 
-  <!-- Footer Navigation Bar -->
+    <div id="bottom-nav">
+      <div id="home">
+        <a class="bn-link" href="main.html">
+          <div class="holder">
+            <span class="material-icons">home</span></br>
+            <p class="bn-p">Home</p>
+          </div>
+        </a>
+      </div>
+      <div id="calendar">
+        <a class="bn-link" href="Schedule.html">
+          <div id="current" class="holder">
+            <span class="material-icons">calendar_today</span></br>
+            <p class="bn-p">Schedule</p>
+          </div>
+        </a>
+      </div>
+      <div id="tracker">
+        <a class="bn-link" href="Todotracker.html">
+          <div class="holder">
+            <span class="material-icons">timeline</span></br>
+            <p class="bn-p">Tracker</p>
+          </div>
+        </a>
+      </div>
+      <div id="grades">
+        <a class="bn-link" href="Gradebook.html">
+          <div class="holder">
+            <span class="material-icons">menu_book</span></br>
+            <p class="bn-p">Grades</p>
+          </div>
+        </a>
+      </div>
+    </div>
 
-  <div id="bottom-nav" class="d-flex flex-row">
-    <nav class="navbar fixed-bottom navbar-light bg-light justify-content-evenly">
-      <ul class="nav">
-        <li class="nav-item px-3">
-          <span class="material-icons px-3">home</span>
-          <a class="nav-link p-0" href="main.html">Home</a>
-        </li>
-        <li class="nav-item px-3">
-          <span class="material-icons px-3">calendar_today</span>
-          <a class="nav-link p-0" aria-current="true" href="Schedule.html">Schedule</a>
-        </li>
-        <li class="nav-item px-3">
-          <span class="material-icons px-3">timeline</span>
-          <a class="nav-link p-0" href="Todotracker.html">Tracker</a>
-        </li>
-        <li class="nav-item px-3">
-          <span class="material-icons px-3">menu_book</span>
-          <a class="nav-link p-0" href="GradeBook.html">Grades</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+    <!-- END of Footer Navigation Bar -->
 
-  <!-- END of Footer Navigation Bar -->
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related    -->
+    <!----------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+      </script>
 
-  <!----------------------------------------------->
-  <!-- JS: Boostrap, Firebase, API related    -->
-  <!----------------------------------------------->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-  </script>
-
-  <!--------------------------------------------------------------------->
-  <!-- JS files: Your own JavaScript functions included here    -->
-  <!--------------------------------------------------------------------->
-  <script src="scripts/schedule.js"></script>
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+    <script src="scripts/schedule.js"></script>
 </body>
 
 </html>

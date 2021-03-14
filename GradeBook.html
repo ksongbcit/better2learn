@@ -342,27 +342,39 @@
 
   <!-- Footer Navigation Bar -->
 
-  <div id="bottom-nav" class="d-flex flex-row">
-    <nav class="navbar fixed-bottom navbar-light bg-light justify-content-evenly">
-      <ul class="nav">
-        <li class="nav-item px-3">
-          <span class="material-icons px-3">home</span>
-          <a class="nav-link p-0" href="main.html">Home</a>
-        </li>
-        <li class="nav-item px-3">
-          <span class="material-icons px-3">calendar_today</span>
-          <a class="nav-link p-0" href="Schedule.html">Schedule</a>
-        </li>
-        <li class="nav-item px-3">
-          <span class="material-icons px-3">timeline</span>
-          <a class="nav-link p-0" href="Todotracker.html">Tracker</a>
-        </li>
-        <li class="nav-item px-3">
-          <span class="material-icons px-3">menu_book</span>
-          <a class="nav-link p-0" aria-current="true" href="GradeBook.html">Grades</a>
-        </li>
-      </ul>
-    </nav>
+  <div id="bottom-nav">
+    <div id="home">
+      <a class="bn-link" href="main.html">
+        <div class="holder">
+          <span class="material-icons">home</span></br>
+          <p class="bn-p">Home</p>
+        </div>
+      </a>
+    </div>
+    <div id="calendar">
+      <a class="bn-link" href="Schedule.html">
+        <div class="holder">
+          <span class="material-icons">calendar_today</span></br>
+          <p class="bn-p">Schedule</p>
+        </div>
+      </a>
+    </div>
+    <div id="tracker">
+      <a class="bn-link" href="Todotracker.html">
+        <div class="holder">
+          <span class="material-icons">timeline</span></br>
+          <p class="bn-p">Tracker</p>
+        </div>
+      </a>
+    </div>
+    <div id="grades">
+      <a class="bn-link" href="Gradebook.html">
+        <div id="current" class="holder">
+          <span class="material-icons">menu_book</span></br>
+          <p class="bn-p">Grades</p>
+        </div>
+      </a>
+    </div>
   </div>
 
   <!-- END of Footer Navigation Bar -->
