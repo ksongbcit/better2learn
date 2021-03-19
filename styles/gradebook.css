@@ -17,8 +17,7 @@
     font-size: 14pt;
 }
 
-#course-container a {
-    text-decoration: none;
+#course-container p {
     display: block;
     color: white;
     width: 130px;
@@ -27,10 +26,14 @@
     padding-top: 4px;
 }
 
-#course-container a:hover {
+#course-container p:hover {
     background: rgb(136, 197, 255);
 }
 
 .course {
     display: none;
+}
+
+#content {
+    height: 1500px;
 }
