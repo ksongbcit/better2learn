@@ -7,6 +7,16 @@ function comp1100() {
     $("#comp1537").css("display", "none");
     $("#comp1712").css("display", "none");
     $("#comp1800").css("display", "none");
+
+    $("#content").css("height", "500px");
+
+    $("#course-comp1100").css("background", "rgb(136, 197, 255)");
+    $("#course-comp1113").css("background", "cornflowerblue");
+    $("#course-comm1116").css("background", "cornflowerblue");
+    $("#course-comp1510").css("background", "cornflowerblue");
+    $("#course-comp1537").css("background", "cornflowerblue");
+    $("#course-comp1712").css("background", "cornflowerblue");
+    $("#course-comp1800").css("background", "cornflowerblue");
   }
 
   function comp1113() {
@@ -17,6 +27,16 @@ function comp1100() {
     $("#comp1537").css("display", "none");
     $("#comp1712").css("display", "none");
     $("#comp1800").css("display", "none");
+
+    $("#content").css("height", "945px");
+
+    $("#course-comp1100").css("background", "cornflowerblue");
+    $("#course-comp1113").css("background", "rgb(136, 197, 255)");
+    $("#course-comm1116").css("background", "cornflowerblue");
+    $("#course-comp1510").css("background", "cornflowerblue");
+    $("#course-comp1537").css("background", "cornflowerblue");
+    $("#course-comp1712").css("background", "cornflowerblue");
+    $("#course-comp1800").css("background", "cornflowerblue");
   }
 
   function comm1116() {
@@ -27,6 +47,16 @@ function comp1100() {
     $("#comp1537").css("display", "none");
     $("#comp1712").css("display", "none");
     $("#comp1800").css("display", "none");
+
+    $("#content").css("height", "1085px");
+
+    $("#course-comp1100").css("background", "cornflowerblue");
+    $("#course-comp1113").css("background", "cornflowerblue");
+    $("#course-comm1116").css("background", "rgb(136, 197, 255)");
+    $("#course-comp1510").css("background", "cornflowerblue");
+    $("#course-comp1537").css("background", "cornflowerblue");
+    $("#course-comp1712").css("background", "cornflowerblue");
+    $("#course-comp1800").css("background", "cornflowerblue");
   }
 
   function comp1510() {
@@ -37,6 +67,16 @@ function comp1100() {
     $("#comp1537").css("display", "none");
     $("#comp1712").css("display", "none");
     $("#comp1800").css("display", "none");
+
+    $("#content").css("height", "1455px");
+
+    $("#course-comp1100").css("background", "cornflowerblue");
+    $("#course-comp1113").css("background", "cornflowerblue");
+    $("#course-comm1116").css("background", "cornflowerblue");
+    $("#course-comp1510").css("background", "rgb(136, 197, 255)");
+    $("#course-comp1537").css("background", "cornflowerblue");
+    $("#course-comp1712").css("background", "cornflowerblue");
+    $("#course-comp1800").css("background", "cornflowerblue");
   }
 
   function comp1537() {
@@ -47,6 +87,16 @@ function comp1100() {
     $("#comp1537").css("display", "block");
     $("#comp1712").css("display", "none");
     $("#comp1800").css("display", "none");
+
+    $("#content").css("height", "585px");
+
+    $("#course-comp1100").css("background", "cornflowerblue");
+    $("#course-comp1113").css("background", "cornflowerblue");
+    $("#course-comm1116").css("background", "cornflowerblue");
+    $("#course-comp1510").css("background", "cornflowerblue");
+    $("#course-comp1537").css("background", "rgb(136, 197, 255)");
+    $("#course-comp1712").css("background", "cornflowerblue");
+    $("#course-comp1800").css("background", "cornflowerblue");
   }
 
   function comp1712() {
@@ -57,6 +107,16 @@ function comp1100() {
     $("#comp1537").css("display", "none");
     $("#comp1712").css("display", "block");
     $("#comp1800").css("display", "none");
+
+    $("#content").css("height", "905px");
+    
+    $("#course-comp1100").css("background", "cornflowerblue");
+    $("#course-comp1113").css("background", "cornflowerblue");
+    $("#course-comm1116").css("background", "cornflowerblue");
+    $("#course-comp1510").css("background", "cornflowerblue");
+    $("#course-comp1537").css("background", "cornflowerblue");
+    $("#course-comp1712").css("background", "rgb(136, 197, 255)");
+    $("#course-comp1800").css("background", "cornflowerblue");
   }
 
   function comp1800() {
@@ -67,4 +127,14 @@ function comp1100() {
     $("#comp1537").css("display", "none");
     $("#comp1712").css("display", "none");
     $("#comp1800").css("display", "block");
+
+    $("#content").css("height", "1345px");
+
+    $("#course-comp1100").css("background", "cornflowerblue");
+    $("#course-comp1113").css("background", "cornflowerblue");
+    $("#course-comm1116").css("background", "cornflowerblue");
+    $("#course-comp1510").css("background", "cornflowerblue");
+    $("#course-comp1537").css("background", "cornflowerblue");
+    $("#course-comp1712").css("background", "cornflowerblue");
+    $("#course-comp1800").css("background", "rgb(136, 197, 255)");
   }
