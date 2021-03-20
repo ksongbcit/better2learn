@@ -16,7 +16,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="styles/bottom-nav.css" rel="stylesheet" />
-    <link href="styles/todoliststyle.css" rel="stylesheet" />
+    <link href="styles/tasktrackerstyle.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -54,40 +54,40 @@
     <!-- Page Contents -->
 
     <div class="container p-3 d-flex flex-column align-items-center">
-      <h1 class="fs-1">To Do Tracker</h1>
+      <h1 class="fs-1">Task Track</h1>
 
       <div class="listcontainer">
         <nav class="container">
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button class="nav-link active" id="nav-how-tab" data-bs-toggle="tab" data-bs-target="#nav-how"
-              type="button" role="tab" aria-controls="nav-how" aria-selected="true"><span
-                class="material-icons">help_center</span></button>
+              type="button" role="tab" aria-controls="nav-how" aria-selected="true">
+              <span class="material-icons">help_center</span><p>Help</p></button>
             <button class="nav-link" id="nav-todo-tab" data-bs-toggle="tab" data-bs-target="#nav-todo" type="button"
-              role="tab" aria-controls="nav-todo" aria-selected="false"><span
-                class="material-icons ">assignment</span></button>
+              role="tab" aria-controls="nav-todo" aria-selected="false">
+              <span class="material-icons ">assignment</span></button>
             <button class="nav-link" id="nav-done-tab" data-bs-toggle="tab" data-bs-target="#nav-done" type="button"
-              role="tab" aria-controls="nav-done" aria-selected="false"><span
-                class="material-icons">assignment_turned_in</span></button>
+              role="tab" aria-controls="nav-done" aria-selected="false">
+              <span class="material-icons">assignment_turned_in</span></button>
           </div>
         </nav>
 
         <div class="tab-content" id="nav-tabContent">
 
-          <div class="tab-pane fade show active" id="nav-how" role="tabpanel" aria-labelledby="nav-how-tab">
-            <p class="fs-3 text-center"><b>Help</b></p>
+          <div class="tab-pane fade show active" id="nav-how" role="tabpanel" aria-labelledby="nav-how-tab"><br/>
+            <p class="fs-3 text-center"><b>How to use Task Track</b></p>
 
             <p class="fs-5">
 
-              <br/>Keep track of your todo items,
+              Keep track of your todo items,
               <br/>What and how you have completed them.<br/>
-              <br/>Switch between 'Todo' and 'Done' tabs.<br/>
-              <br/>Adding specific details help planning your tasks.<br/>
-              <br/>Learn more about your own strengths and weaknesses.<br/>
+              <br/>Switch between 'To Do' and 'Done' tabs.<br/>
+              <br/>Add scheduled times to help plan your days.<br/>
+              <br/>Learn more about your strengths and weaknesses.<br/>
 
             </p>
           </div>
 
-          <div class="tab-pane fade" id="nav-todo" role="tabpanel" aria-labelledby="nav-todo-tab">
+          <div class="tab-pane fade" id="nav-todo" role="tabpanel" aria-labelledby="nav-todo-tab"><br/>
 
             <p class="fs-3 text-center"><b>Task items</b></p>
             <div class="inputtab">
@@ -99,10 +99,23 @@
               <input type="datetime-local" id="newitem" name="itemduetime" placeholder="Due date and time">
             </div>
 
+            <div class="itemlist">
+
+
+
+            </div>
+
 
           </div>
 
-          <div class="tab-pane fade" id="nav-done" role="tabpanel" aria-labelledby="nav-done-tab">
+          <div class="tab-pane fade" id="nav-done" role="tabpanel" aria-labelledby="nav-done-tab"><br/>
+
+            <p class="fs-3 text-center"><b>Completed Tasks</b></p>
+            <div class="donelist">
+
+
+
+            </div>
 
           </div>
 
@@ -165,7 +178,7 @@
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
 
-    <script src="/scripts/todolist.js"></script>
+    <script src="/scripts/tasktracker.js"></script>
 
 
   </body>
