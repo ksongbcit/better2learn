@@ -27,9 +27,19 @@
 }
 
 #course-container p:hover {
-    background: rgb(136, 197, 255);
+    background: rgb(155, 202, 255);
 }
 
 .course {
     display: none;
+}
+
+body {
+    background-image: url(../images/background.jpg);
+    background-repeat: repeat;
+}
+
+#white-header {
+    background-color: white;
+    padding-bottom: 5px;
 }
