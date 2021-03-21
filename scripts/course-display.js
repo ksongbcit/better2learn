@@ -17,6 +17,50 @@ function comp1100() {
     $("#course-comp1537").css("background", "cornflowerblue");
     $("#course-comp1712").css("background", "cornflowerblue");
     $("#course-comp1800").css("background", "cornflowerblue");
+
+    $("#course-comp1100").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "rgb(155, 202, 255)")
+    });
+    
+    $("#course-comp1113").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comm1116").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1510").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1537").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1712").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1800").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    
   }
 
   function comp1113() {
@@ -37,6 +81,49 @@ function comp1100() {
     $("#course-comp1537").css("background", "cornflowerblue");
     $("#course-comp1712").css("background", "cornflowerblue");
     $("#course-comp1800").css("background", "cornflowerblue");
+
+    $("#course-comp1100").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1113").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "rgb(155, 202, 255)")
+    });
+    
+    $("#course-comm1116").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1510").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1537").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1712").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1800").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
   }
 
   function comm1116() {
@@ -57,6 +144,49 @@ function comp1100() {
     $("#course-comp1537").css("background", "cornflowerblue");
     $("#course-comp1712").css("background", "cornflowerblue");
     $("#course-comp1800").css("background", "cornflowerblue");
+
+    $("#course-comp1100").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1113").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comm1116").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "rgb(155, 202, 255)")
+    });
+    
+    $("#course-comp1510").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1537").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1712").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1800").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
   }
 
   function comp1510() {
@@ -77,6 +207,49 @@ function comp1100() {
     $("#course-comp1537").css("background", "cornflowerblue");
     $("#course-comp1712").css("background", "cornflowerblue");
     $("#course-comp1800").css("background", "cornflowerblue");
+
+    $("#course-comp1100").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1113").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comm1116").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1510").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "rgb(155, 202, 255)")
+    });
+    
+    $("#course-comp1537").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1712").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1800").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
   }
 
   function comp1537() {
@@ -97,6 +270,49 @@ function comp1100() {
     $("#course-comp1537").css("background", "rgb(155, 202, 255)");
     $("#course-comp1712").css("background", "cornflowerblue");
     $("#course-comp1800").css("background", "cornflowerblue");
+
+    $("#course-comp1100").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1113").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comm1116").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1510").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1537").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "rgb(155, 202, 255)")
+    });
+    
+    $("#course-comp1712").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1800").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
   }
 
   function comp1712() {
@@ -117,6 +333,49 @@ function comp1100() {
     $("#course-comp1537").css("background", "cornflowerblue");
     $("#course-comp1712").css("background", "rgb(155, 202, 255)");
     $("#course-comp1800").css("background", "cornflowerblue");
+
+    $("#course-comp1100").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1113").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comm1116").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1510").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1537").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1712").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "rgb(155, 202, 255)")
+    });
+    
+    $("#course-comp1800").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
   }
 
   function comp1800() {
@@ -137,4 +396,47 @@ function comp1100() {
     $("#course-comp1537").css("background", "cornflowerblue");
     $("#course-comp1712").css("background", "cornflowerblue");
     $("#course-comp1800").css("background", "rgb(155, 202, 255)");
+
+    $("#course-comp1100").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1113").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comm1116").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1510").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1537").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1712").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "cornflowerblue")
+    });
+    
+    $("#course-comp1800").hover(function(){
+      $(this).css("background", "rgb(155, 202, 255)");
+    }, function(){
+      $(this).css("background", "rgb(155, 202, 255)")
+    });
+    
   }

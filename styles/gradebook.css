@@ -24,6 +24,7 @@
     height: 35px;
     border-radius: 17px;
     padding-top: 4px;
+    cursor: pointer;
 }
 
 #course-container p:hover {
