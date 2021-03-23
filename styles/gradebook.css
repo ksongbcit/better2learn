@@ -17,20 +17,30 @@
     font-size: 14pt;
 }
 
-#course-container a {
-    text-decoration: none;
+#course-container p {
     display: block;
     color: white;
     width: 130px;
     height: 35px;
     border-radius: 17px;
     padding-top: 4px;
+    cursor: pointer;
 }
 
-#course-container a:hover {
-    background: rgb(136, 197, 255);
+#course-container p:hover {
+    background: rgb(155, 202, 255);
 }
 
 .course {
     display: none;
+}
+
+body {
+    background-image: url(../images/background.jpg);
+    background-repeat: repeat;
+}
+
+#white-header {
+    background-color: white;
+    padding-bottom: 5px;
 }
