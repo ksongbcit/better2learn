@@ -358,3 +358,13 @@
     grid-row: 10;
     border: solid grey 1px;
 }
+
+.container.p-3 {
+    background-color: white;
+    margin-bottom: 110px;
+  }
+  
+  body {
+    background-image: url(../images/background.jpg);
+    background-repeat: repeat;
+  }
