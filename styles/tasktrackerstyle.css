@@ -1,17 +1,37 @@
-#listcontainer {
-  padding: 2rem;
-
-}
-
 #nav-todo p {
   margin: 5px;
-}
-
-.container {
-  background-color: white;
 }
 
 body {
   background-image: url(../images/background.jpg);
   background-repeat: repeat;
+}
+
+.container {
+  width: 90%;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.container .trackertitle {
+text-align: center;
+}
+
+#nav-tab {
+  justify-content: center;
+}
+
+.tabs span {
+  vertical-align: middle;
+  padding-right: 5px;
+}
+
+.listcontainer {
+  padding: 1rem;
+
+}
+
+.container .material-icons {
+  font-size: 24px;
+
 }
