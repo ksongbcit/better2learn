@@ -44,3 +44,14 @@ body {
     background-color: white;
     padding-bottom: 5px;
 }
+
+span {
+    float: right;
+    width: 25px;
+}
+
+input {
+    float: right;
+    width: 2.5em;
+    margin-right: 10px;
+}
