@@ -45,7 +45,7 @@ body {
     padding-bottom: 5px;
 }
 
-span {
+.score {
     float: right;
     width: 25px;
 }
