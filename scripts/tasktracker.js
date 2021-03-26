@@ -1,4 +1,4 @@
-$(
+$(function() {
   const itemlist = document.getElementById("itemlist");
   const button = document.getElementById("saveitem");
 
@@ -6,22 +6,21 @@ $(
   var itemstart = document.getElementById("newitemstart").value;
   var itemdue = document.getElementById("newitemdue").value;
 
-  function(e)
+
+  button.addEventListener("click", addItem());
+
+  function addItem() {
+    console.log(itemname);
+    console.log(itemstart);
+    console.log(itemdue);
+  }
 
 
 
-  button.addEventListener("click", e);
 
 
-
-
-
-  console.log(itemname);
   itemlist.appendChild(newitem);
 
-
-
-
-);
+});
 
 
