@@ -1,26 +1,34 @@
-$(function() {
-  const itemlist = document.getElementById("itemlist");
-  const button = document.getElementById("saveitem");
+const itemlist = document.querySelector("#itemlist");
+const submit = document.querySelector("#saveitem");
 
-  var itemname = document.getElementById("newitem").value;
-  var itemstart = document.getElementById("newitemstart").value;
-  var itemdue = document.getElementById("newitemdue").value;
+var newname = document.querySelector("#newitem");
+var newstartdate = document.querySelector("#newitemstartdate");
+var newduedate = document.querySelector("#newitemduedate");
+var newstarttime = document.querySelector("#newitemstarttime");
+var newduetime = document.querySelector("#newitemduetime");
 
+submit.addEventListener("click", addNewItem);
 
-  button.addEventListener("click", addItem());
+function addNewItem(e) {
+  e.preventDefault();
 
-  function addItem() {
-    console.log(itemname);
-    console.log(itemstart);
-    console.log(itemdue);
+  let itemContainer = document.createElement('div');
+  let itemDetail = document.createElement('p');
+  let itemStart = document.createElement('p');
+  let itemDue = document.createElement('p');
+
+  itemDetail.innerText = "Task : " + newname.value;
+  itemStart.innerText = "Start on : " + newstartdate.value + "  At : " + newstarttime.value;
+  itemDue.innerText = "Finish on : " + newduedate.value + "  By : " + newduetime.value;
+
+  if (newname.value != "" && newstartdate.value != "" && newstarttime.value != "" &&
+    newduedate.value != "" && newduetime.value != "") {
+    itemlist.appendChild(itemContainer);
+    itemContainer.appendChild(itemDetail);
+    itemContainer.appendChild(itemStart);
+    itemContainer.appendChild(itemDue);
+  } else {
+    alert("Please fill in the blanks");
   }
 
-
-
-
-
-  itemlist.appendChild(newitem);
-
-});
-
-
+}
