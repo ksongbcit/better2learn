@@ -283,21 +283,26 @@ var uiConfig = {
         }).then(function () {
           console.log("New user added to firestore and grades collection created.");
           window.location.assign("main.html"); //re-direct to main.html after signup
-        })
-          .catch(function (error) {
-            console.log("Error adding new user: " + error);
-          });
+        }).catch(function (error) {
+          console.log("Error adding new user: " + error);
+        });
+
+        // create collection and doc for new user.
+        db.collection("todolist").doc(user.uid).set({
+
+        });
+        
       } else {
         return true;
       }
       return false;
+    },
+    uiShown: function () {
+      // The widget is rendered.
+      // Hide the loader.
+      document.getElementById('loader').style.display = 'none';
+    }
   },
-  uiShown: function () {
-    // The widget is rendered.
-    // Hide the loader.
-    document.getElementById('loader').style.display = 'none';
-  }
-},
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
   signInSuccessUrl: 'main.html',
@@ -317,4 +322,3 @@ var uiConfig = {
 };
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
-

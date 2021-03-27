@@ -9,6 +9,8 @@ var newduetime = document.querySelector("#newitemduetime");
 
 submit.addEventListener("click", addNewItem);
 
+var user = firebase.auth().currentUser;
+
 function addNewItem(e) {
   e.preventDefault();
 
@@ -21,14 +23,24 @@ function addNewItem(e) {
   itemStart.innerText = "Start on : " + newstartdate.value + "  At : " + newstarttime.value;
   itemDue.innerText = "Finish on : " + newduedate.value + "  By : " + newduetime.value;
 
-  if (newname.value != "" && newstartdate.value != "" && newstarttime.value != "" &&
-    newduedate.value != "" && newduetime.value != "") {
+  // if (newname.value != "" && newstartdate.value != "" && newstarttime.value != "" &&
+  //   newduedate.value != "" && newduetime.value != "") {
     itemlist.appendChild(itemContainer);
     itemContainer.appendChild(itemDetail);
     itemContainer.appendChild(itemStart);
     itemContainer.appendChild(itemDue);
-  } else {
-    alert("Please fill in the blanks");
-  }
+  // } else {
+  //   alert("Please fill in the blanks");
+  // }
+
+  var todolist = db.collection("todolist").doc(user.uid);
+
+  todoList.set({
+    Details: itemDetail.innerText,
+    Start: itemStart.innerText,
+    Finish: itemDue.innerText
+  }, {
+    merge: true
+  });
 
 }
