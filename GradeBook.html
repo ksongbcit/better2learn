@@ -95,7 +95,7 @@
       <div class="accordion">
         <h3><a href="#">Journals</a></h3>
         <div>
-          <p>Journal 1<span class="score"> /1</span><input type="text"></input></p>
+          <p id="c1100j1p">Journal 1<button type="button" id="set" class="btn btn-outline-primary right">Set</button><span class="score"> /1</span><input id="c1100j1g" type="text"></input></p>
           <p>Journal 2<span class="score"> /1</span><input type="text"></input></p>
           <p>Journal 3<span class="score"> /1</span><input type="text"></input></p>
           <p>Journal 4<span class="score"> /1</span><input type="text"></input></p>
@@ -417,6 +417,11 @@
   </script>
 
   <script src="./scripts/course-display.js"></script>
+  <script src="./scripts/grades-set.js"></script>
+  <script>
+    setGrade();
+    keepGrade();
+  </script>
 
 </body>
 

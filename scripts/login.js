@@ -21,7 +21,8 @@ var uiConfig = {
           name: user.displayName, //"users" collection
           email: user.email //with authenticated user's ID (user.uid)
         })
-        //also if new user, create collection to store grades for gradebook
+        //also if new user, create collection to store all grades for all courses for gradebook
+        //very sorry for the hideously long function
         db.collection("grades").doc(user.uid).set({
           c1100j1: null,
           c1100j1s: 1,

@@ -47,11 +47,22 @@ body {
 
 .score {
     float: right;
-    width: 25px;
+    margin: 10px;
+    line-height: 12pt;
 }
 
 input {
     float: right;
     width: 2.5em;
     margin-right: 10px;
+}
+
+.right {
+    float: right;
+}
+
+.btn.btn-outline-primary.right {
+    height: 20pt;
+    line-height: 14pt;
+    font-size: 14pt;
 }
