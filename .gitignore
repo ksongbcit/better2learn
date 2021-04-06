@@ -2,4 +2,4 @@
 .DS_Store
 
 # make api keys private
-./scripts/firebase-api.js
+scripts/firebase-api.js
