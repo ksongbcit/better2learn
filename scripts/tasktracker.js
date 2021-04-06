@@ -31,7 +31,6 @@ function getInputsAndAdd() {
         'duetime': duetime,
         'complete': false
       })
-      showTodoList('complete');
     });
   });
 };
@@ -65,8 +64,6 @@ function showTodoList(status) {
       });
   });
 };
-showTodoList('complete');
-
 
 
 // //show done list
@@ -116,3 +113,11 @@ function quit() {
   });
 };
 quit();
+
+
+function refreshTodo() {
+  todotab.addEventListener('click', (e) => {
+    showTodoList('complete');
+  });
+}
+refreshTodo();
