@@ -1,110 +1,117 @@
+const form = document.getElementById('inputtab');
 const save = document.getElementById('saveitem');
-const reset = document.getElementById('reset');
 
 const todotab = document.getElementById('nav-todo-tab');
 const donetab = document.getElementById('nav-done-tab');
 const statstab = document.getElementById('nav-stats-tab');
 
+// Add input field data to firestore
 function getInputsAndAdd() {
   save.addEventListener('click', (e) => {
-
     e.preventDefault();
-
     firebase.auth().onAuthStateChanged(function (user) {
-      //get the input values
-      var title = document.getElementById('newitem').value;
-      var startdate = document.getElementById('newitemstartdate').value;
-      var starttime = document.getElementById('newitemstarttime').value;
-      var duedate = document.getElementById('newitemduedate').value;
-      var duetime = document.getElementById('newitemduetime').value;
 
-      console.log(title);
-      console.log(startdate);
-      console.log(starttime);
+      if (user) {
+        //get the input values
+        let title = document.getElementById('newitem').value;
+        let startdate = document.getElementById('newitemstartdate').value;
+        let starttime = document.getElementById('newitemstarttime').value;
+        let duedate = document.getElementById('newitemduedate').value;
+        let duetime = document.getElementById('newitemduetime').value;
 
-      //save to database
-      db.collection('todolist').doc(user.uid).collection('items').add({
-        'title': title,
-        'startdate': startdate,
-        'starttime': starttime,
-        'duedate': duedate,
-        'duetime': duetime,
-        'complete': false
-      })
+        console.log(title);
+        console.log(startdate);
+        console.log(starttime);
+
+        // Alert if there are missing fields
+        if (title == "" || startdate == "" || starttime == "" || duedate == "" || duetime == "") {
+          alert("Please enter all fields!");
+        } else {
+          // Save the input data to database
+          db.collection('users').doc(user.uid).collection('todolist').add({
+            'title': title,
+            'startdate': startdate,
+            'starttime': starttime,
+            'duedate': duedate,
+            'duetime': duetime,
+            'complete': false
+          });
+        }
+        inputtab.reset();
+      } else {
+        alert("Please login!");
+        location.assign('login.html');
+      }
     });
   });
 };
 getInputsAndAdd();
 
-//show todo list
-function showTodoList(status) {
-  firebase.auth().onAuthStateChanged(function (user) {
-    db.collection('todolist')
-      .doc(user.uid)
-      .collection('items')
-      .where(status, '==', false)
-      .get()
-      .then(function (snap) {
-        snap.forEach(function (doc) {
-          let title = doc.data().title;
-          let startdate = doc.data().startdate;
-          let starttime = doc.data().starttime;
-          let duedate = doc.data().duedate;
-          let duetime = doc.data().duetime;
+// initial snapshot of todo list
+auth.onAuthStateChanged(user => {
+  db.collection("users").doc(user.uid).collection('todolist').where("complete", "==", false)
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        // doc.id, " => ", doc.data(
+        console.log(doc.id);
+      });
+    })
+    .catch((error) => {
+      console.log("Error getting documents: ", error);
+    });
+});
 
-          console.log(title);
-          console.log(startdate);
-          console.log(starttime);
+// items that changed
+auth.onAuthStateChanged(user => {
 
-          $('#itemlist').append('<h4>' + title + '</h4>');
-          $('#itemlist').append('<h5>' + startdate + ' at ' + starttime + '</h5>');
-          $('#itemlist').append('<h5>' + duedate + ' at ' + duetime + '</h5>');
+  if (user) {
+    db.collection('users').doc(user.uid).collection('todolist')
+      .where('complete', '==', false)
+      .onSnapshot((snapshot) => {
+        snapshot.docChanges().forEach((change) => {
+
+          // let todoitemid = doc.id;
+          // console.log("Todo item id : " + todoitemid);
 
         });
       });
-  });
-};
+  }
+});
 
 
-// //show done list
-// function showDoneList(status) {
-//   firebase.auth().onAuthStateChanged(function (user) {
-//     db.collection('todolist')
-//       .doc(user.uid)
-//       .collection('items')
-//       .where(status, '==', true)
-//       .get()
-//       .then(function (snap) {
-//         snap.forEach(function (doc) {
-//           let title = doc.data().title;
-//           let startdate = doc.data().startdate;
-//           let starttime = doc.data().starttime;
-//           let duedate = doc.data().duedate;
-//           let duetime = doc.data().duetime;
-
-//           console.log(title);
-//           console.log(startdate);
-//           console.log(starttime);
-
-//           let item = document.createElement('div');
-//           item.appendChild('<h4>' + title + '</h4>');
-//           item.appendChild('<h5>' + startdate + " at " + starttime + '</h5>');
-//           item.appendChild('<h5>' + duedate + " at " + duetime + '</h5>');
-
-//           $('#itemlist').append(item);
-
-//         });
-//       });
+// db.collection("cities").where("state", "==", "CA")
+//   .onSnapshot((snapshot) => {
+//     snapshot.docChanges().forEach((change) => {
+//       if (change.type === "added") {
+//         console.log("New city: ", change.doc.data());
+//       }
+//       if (change.type === "modified") {
+//         console.log("Modified city: ", change.doc.data());
+//       }
+//       if (change.type === "removed") {
+//         console.log("Removed city: ", change.doc.data());
+//       }
+//     });
 //   });
-// };
-// showDoneList('complete');
 
 
+// Done button and listener for updating complete field.
+// let done = document.createElement('button');
+// let i = document.createElement('i');
+// i.className = 'material-icons';
+// i.textContent = 'check_circle';
+// done.appendChild(i);
 
-
-// function refreshTodo() {
-//   todotab.addEventListener('click', (e) => {
-//     showTodoList('complete');
+// done.addEventListener('click', (e) => {
+//   let id = todoitem;
+//   auth.onAuthStateChanged((user) => {
+//     if (user) {
+//       db.collection('users').doc(user.uid).collection('todolist').doc(id).update('complete', true);
+//     } else {
+//       console.log('Update failed! Please log in!');
+//       location.assign('login.html');
+//     }
 //   });
-// }
-// refreshTodo();
+// });
