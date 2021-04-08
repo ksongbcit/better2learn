@@ -101,23 +101,24 @@ function showTodoList(status) {
 
 
 function quit() {
-  logout.addEventListener('click', () => {
+  logout.addEventListener('click', (e) => {
 
     console.log("logging out user");
     firebase.auth().signOut().then(() => {
       // Sign-out successful.
-      window.location.href = "index.html";
+      location.assign("index.html");
     }).catch((error) => {
       // An error happened.
+      console.log(error);
     });
   });
 };
 quit();
 
 
-function refreshTodo() {
-  todotab.addEventListener('click', (e) => {
-    showTodoList('complete');
-  });
-}
-refreshTodo();
+// function refreshTodo() {
+//   todotab.addEventListener('click', (e) => {
+//     showTodoList('complete');
+//   });
+// }
+// refreshTodo();
