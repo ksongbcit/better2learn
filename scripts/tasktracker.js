@@ -1,6 +1,6 @@
 const save = document.getElementById('saveitem');
 const reset = document.getElementById('reset');
-const logout = document.getElementById('logout');
+
 const todotab = document.getElementById('nav-todo-tab');
 const donetab = document.getElementById('nav-done-tab');
 const statstab = document.getElementById('nav-stats-tab');
@@ -100,20 +100,6 @@ function showTodoList(status) {
 // showDoneList('complete');
 
 
-function quit() {
-  logout.addEventListener('click', (e) => {
-
-    console.log("logging out user");
-    firebase.auth().signOut().then(() => {
-      // Sign-out successful.
-      location.assign("index.html");
-    }).catch((error) => {
-      // An error happened.
-      console.log(error);
-    });
-  });
-};
-quit();
 
 
 // function refreshTodo() {

@@ -1,3 +1,5 @@
+const logout = document.getElementById('logout');
+
 function quit() {
   logout.addEventListener('click', (e) => {
 
