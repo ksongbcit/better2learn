@@ -1,43 +1,43 @@
+const user = auth.currentUser;
 const form = document.getElementById('inputtab');
 const save = document.getElementById('saveitem');
 
-const todotab = document.getElementById('nav-todo-tab');
-const donetab = document.getElementById('nav-done-tab');
-const statstab = document.getElementById('nav-stats-tab');
+const todolist = document.getElementById('itemlist');
+const donelist = document.getElementById('donelist');
 
 // Add input field data to firestore
 function getInputsAndAdd() {
   save.addEventListener('click', (e) => {
     e.preventDefault();
-    firebase.auth().onAuthStateChanged(function (user) {
 
+    firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-        //get the input values
+        // Get the input values from dom form
         let title = document.getElementById('newitem').value;
         let startdate = document.getElementById('newitemstartdate').value;
         let starttime = document.getElementById('newitemstarttime').value;
         let duedate = document.getElementById('newitemduedate').value;
         let duetime = document.getElementById('newitemduetime').value;
 
-        console.log(title);
-        console.log(startdate);
-        console.log(starttime);
-
         // Alert if there are missing fields
         if (title == "" || startdate == "" || starttime == "" || duedate == "" || duetime == "") {
           alert("Please enter all fields!");
         } else {
-          // Save the input data to database
-          db.collection('users').doc(user.uid).collection('todolist').add({
-            'title': title,
-            'startdate': startdate,
-            'starttime': starttime,
-            'duedate': duedate,
-            'duetime': duetime,
-            'complete': false
-          });
+          // Save the input data to firestore
+          db.collection('users').doc(user.uid).collection('todolist')
+            .add({
+              'title': title,
+              'startdate': startdate,
+              'starttime': starttime,
+              'duedate': duedate,
+              'duetime': duetime,
+              'complete': false
+            })
+            .then(() => {
+              // Reset the form after data has been added
+              inputtab.reset();
+            });
         }
-        inputtab.reset();
       } else {
         alert("Please login!");
         location.assign('login.html');
@@ -47,71 +47,113 @@ function getInputsAndAdd() {
 };
 getInputsAndAdd();
 
-// initial snapshot of todo list
-auth.onAuthStateChanged(user => {
-  db.collection("users").doc(user.uid).collection('todolist').where("complete", "==", false)
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        // doc.id, " => ", doc.data(
-        console.log(doc.id);
-      });
-    })
-    .catch((error) => {
-      console.log("Error getting documents: ", error);
-    });
-});
 
-// items that changed
-auth.onAuthStateChanged(user => {
+// Change 24-Hour format to 12-Hour format
+function to12HourFormat(timedata) {
+  let hours = timedata.substr(0, 2);
+  let minutes = timedata.substr(3, 2);
+  if (hours >= 13) {
+    hours -= 12;
+    return `${hours}:${minutes} PM`;
+  } else {
+    return `${hours}:${minutes} AM`;
+  }
+}
 
+
+// Realtime listener for todo items
+auth.onAuthStateChanged(user => {
   if (user) {
-    db.collection('users').doc(user.uid).collection('todolist')
-      .where('complete', '==', false)
+    db.collection('users').doc(user.uid).collection('todolist').where("complete", "==", false)
       .onSnapshot((snapshot) => {
         snapshot.docChanges().forEach((change) => {
 
-          // let todoitemid = doc.id;
-          // console.log("Todo item id : " + todoitemid);
+          // Add new item to list and show saved list.
+          if (change.type === "added") {
+            console.log("New item: ", change.doc.data());
 
-        });
-      });
+            let itemcard = document.createElement('div');
+            itemcard.className = 'itemcard';
+            let itemtitle = document.createElement('h4');
+            let times = document.createElement('span');
+            let id = change.doc.id;
+
+            itemtitle.innerHTML = change.doc.data().title;
+            times.innerHTML = "<b>Start</b> at " + to12HourFormat(change.doc.data().starttime) + " on <i>" + change.doc.data().startdate + "</i>";
+            times.innerHTML += "</br><b>Due</b> at " + to12HourFormat(change.doc.data().duetime) + " on <i>" + change.doc.data().duedate + "</i>";
+
+            // Creating done button and adding event listener to complete a todo item
+            let donebutton = document.createElement('button');
+            let i = document.createElement('i');
+            i.className = 'material-icons';
+            i.textContent = 'check_circle';
+            donebutton.appendChild(i);
+
+            donebutton.addEventListener('click', () => {
+              console.log(id);
+              db.collection('users').doc(user.uid).collection('todolist').doc(id).update({
+                complete: true
+              });
+              console.log("Update success")
+              todolist.removeChild(itemcard);
+            });
+
+            // Appending elements to item card
+            itemcard.appendChild(itemtitle);
+            itemcard.appendChild(times);
+            itemcard.appendChild(donebutton);
+            todolist.appendChild(itemcard);
+          }
+        })
+      })
   }
 });
 
 
-// db.collection("cities").where("state", "==", "CA")
-//   .onSnapshot((snapshot) => {
-//     snapshot.docChanges().forEach((change) => {
-//       if (change.type === "added") {
-//         console.log("New city: ", change.doc.data());
-//       }
-//       if (change.type === "modified") {
-//         console.log("Modified city: ", change.doc.data());
-//       }
-//       if (change.type === "removed") {
-//         console.log("Removed city: ", change.doc.data());
-//       }
-//     });
-//   });
+// Realtime listener for completed items
+auth.onAuthStateChanged(user => {
+  if (user) {
+    db.collection('users').doc(user.uid).collection('todolist').where("complete", "==", true)
+      .onSnapshot((snapshot) => {
+        snapshot.docChanges().forEach((change) => {
 
+          // Add new item to list and show saved list.
+          if (change.type === "added") {
+            console.log("Done item: ", change.doc.data());
 
-// Done button and listener for updating complete field.
-// let done = document.createElement('button');
-// let i = document.createElement('i');
-// i.className = 'material-icons';
-// i.textContent = 'check_circle';
-// done.appendChild(i);
+            let itemcard = document.createElement('div');
+            itemcard.className = 'itemcard';
+            let itemtitle = document.createElement('h4');
+            let times = document.createElement('span');
+            let id = change.doc.id;
 
-// done.addEventListener('click', (e) => {
-//   let id = todoitem;
-//   auth.onAuthStateChanged((user) => {
-//     if (user) {
-//       db.collection('users').doc(user.uid).collection('todolist').doc(id).update('complete', true);
-//     } else {
-//       console.log('Update failed! Please log in!');
-//       location.assign('login.html');
-//     }
-//   });
-// });
+            // Creating delete button and adding event listener
+            let deletebutton = document.createElement('button');
+            let i = document.createElement('i');
+            i.className = 'material-icons';
+            i.textContent = 'delete';
+            deletebutton.appendChild(i);
+            // Event removes from database
+            deletebutton.addEventListener('click', () => {
+              console.log(id);
+              db.collection('users').doc(user.uid).collection('todolist').doc(id).delete().then(() => {
+                console.log("Removed from database");
+                donelist.removeChild(itemcard);
+              });
+            });
+
+            itemtitle.innerHTML = change.doc.data().title;
+            times.innerHTML = "<b>Start</b> at " + to12HourFormat(change.doc.data().starttime) + " on <i>" + change.doc.data().startdate + "</i>";
+            times.innerHTML += "</br><b>Due</b> at " + to12HourFormat(change.doc.data().duetime) + " on <i>" + change.doc.data().duedate + "</i>";
+
+            // Appending elements to item card
+            itemcard.appendChild(itemtitle);
+            itemcard.appendChild(times);
+            itemcard.appendChild(deletebutton);
+            donelist.appendChild(itemcard);
+
+          }
+        })
+      });
+  }
+});
