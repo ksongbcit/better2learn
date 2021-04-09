@@ -288,11 +288,6 @@ var uiConfig = {
           console.log("Error adding new user: " + error);
         });
 
-        // create collection and doc for new user.
-        db.collection("todolist").doc(user.uid).set({
-
-        });
-        
       } else {
         return true;
       }

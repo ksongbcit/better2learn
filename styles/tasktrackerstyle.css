@@ -14,7 +14,7 @@ body {
 }
 
 .container .trackertitle {
-text-align: center;
+  text-align: center;
 }
 
 #nav-tab {
@@ -38,4 +38,8 @@ text-align: center;
 
 .footer {
   height: 200px;
+}
+
+.nav-pills .nav-link.active {
+  background-color: rgba(13, 110, 253, 0.75) !important;
 }

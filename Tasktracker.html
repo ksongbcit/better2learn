@@ -77,6 +77,7 @@
         </nav>
 
         <div class="tab-content" id="nav-tabContent">
+
           <!-- Help tab -->
           <div class="tab-pane fade show active" id="nav-how" role="tabpanel" aria-labelledby="nav-how-tab"><br />
             <p class="fs-3 text-center">
@@ -99,117 +100,98 @@
             <form id="inputtab" class="text-center">
               <p class="fs-5">Task details</p>
               <input type="text" size="40" id="newitem" name="itemtitle" placeholder="What do you need to do?" /><br />
-              <span>Start date : </span>
-              <input type="date" id="newitemstartdate" name="itemstartdate" /><span> Time : </span>
-              <input type="time" id="newitemstarttime" name="itemstarttime" /><br />
-              <span>Finish date : </span>
-              <input type="date" id="newitemduedate" name="itemduedate" /> <span> Time : </span>
-              <input type="time" id="newitemduetime" name="itemduetime" /><br />
-
-              <input type="reset" id="reset" value="Reset" name="reset" />
+              <p> Start date : <input type="date" id="newitemstartdate" name="itemstartdate" /> At :
+                <input type="time" id="newitemstarttime" name="itemstarttime" /> </p>
+              <p>Finish date : <input type="date" id="newitemduedate" name="itemduedate" /> At :
+                <input type="time" id="newitemduetime" name="itemduetime" /></p>
+              <input type="reset" value="Reset" />
               <input type="submit" id="saveitem" value="Save" name="save" />
             </form><br />
-
             <div id="itemlist">
-
             </div>
-
           </div>
 
           <!-- Done tab -->
           <div class="tab-pane fade" id="nav-done" role="tabpanel" aria-labelledby="nav-done-tab"><br />
-
             <p class="fs-3 text-center"><b>Completed Tasks</b></p>
             <div id="donelist">
-
-
-
             </div>
-
           </div>
 
           <!-- Stats tab -->
           <div class="tab-pane fade" id="nav-stats" role="tabpanel" aria-labelledby="nav-stats-tab"><br />
-
             <p class="fs-3 text-center"><b>Your Statistics</b></p>
             <div id="statslist">
-
-
-
             </div>
-
           </div>
 
         </div>
-
       </div>
-
     </div>
 
-    <footerc class="footer"><br /><br />
+    <footer class="footer"><br /><br />
       <p class="text-center"> 2021 Better2Learn </p>
-      </footer>
+    </footer>
 
+    <!-- END of Page Contents -->
 
-      <!-- END of Page Contents -->
+    <!-- Footer Navigation Bar -->
 
-      <!-- Footer Navigation Bar -->
-
-      <div id="bottom-nav">
-        <div id="home">
-          <a class="bn-link" href="main.html">
-            <div class="holder">
-              <span class="material-icons">home</span></br>
-              <p class="bn-p">Home</p>
-            </div>
-          </a>
-        </div>
-        <div id="calendar">
-          <a class="bn-link" href="Schedule.html">
-            <div class="holder">
-              <span class="material-icons">calendar_today</span></br>
-              <p class="bn-p">Schedule</p>
-            </div>
-          </a>
-        </div>
-        <div id="tracker">
-          <a class="bn-link" href="Tasktracker.html">
-            <div id="current" class="holder">
-              <span class="material-icons">timeline</span></br>
-              <p class="bn-p">Tracker</p>
-            </div>
-          </a>
-        </div>
-        <div id="grades">
-          <a class="bn-link" href="Gradebook.html">
-            <div class="holder">
-              <span class="material-icons">menu_book</span></br>
-              <p class="bn-p">Grades</p>
-            </div>
-          </a>
-        </div>
+    <div id="bottom-nav">
+      <div id="home">
+        <a class="bn-link" href="main.html">
+          <div class="holder">
+            <span class="material-icons">home</span></br>
+            <p class="bn-p">Home</p>
+          </div>
+        </a>
       </div>
+      <div id="calendar">
+        <a class="bn-link" href="Schedule.html">
+          <div class="holder">
+            <span class="material-icons">calendar_today</span></br>
+            <p class="bn-p">Schedule</p>
+          </div>
+        </a>
+      </div>
+      <div id="tracker">
+        <a class="bn-link" href="Tasktracker.html">
+          <div id="current" class="holder">
+            <span class="material-icons">timeline</span></br>
+            <p class="bn-p">Tracker</p>
+          </div>
+        </a>
+      </div>
+      <div id="grades">
+        <a class="bn-link" href="Gradebook.html">
+          <div class="holder">
+            <span class="material-icons">menu_book</span></br>
+            <p class="bn-p">Grades</p>
+          </div>
+        </a>
+      </div>
+    </div>
 
-      <!-- END of Footer Navigation Bar -->
+    <!-- END of Footer Navigation Bar -->
 
-      <!----------------------------------------------->
-      <!-- JS: Boostrap, Firebase, API related    -->
-      <!----------------------------------------------->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-      </script>
-      <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script src="./scripts/firebase-api.js"></script>
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related    -->
+    <!----------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./scripts/firebase-api.js"></script>
 
-      <!--------------------------------------------------------------------->
-      <!-- JS files: Your own JavaScript functions included here    -->
-      <!--------------------------------------------------------------------->
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
 
-      <script src="./scripts/tasktracker.js"></script>
-
+    <script src="./scripts/tasktracker.js"></script>
+    <script src="./scripts/logout.js"></script>
 
   </body>
 
