@@ -1,364 +1,364 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="utf-8">
-    <title>Better2Learn</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+<head>
+  <meta charset="utf-8">
+  <title>Better2Learn</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
 
-    <!-- Bootstrap for Mobile-first, and JQuery -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+  <!-- Bootstrap for Mobile-first, and JQuery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
 
-    <!-- Optional styles and scripts of your own -->
+  <!-- Optional styles and scripts of your own -->
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="styles/bottom-nav.css" rel="stylesheet" />
   <link href="styles/gradebook-styles/gradebook.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
+  <!-------------------------------------->
+  <!-- The following is HTML for layout -->
+  <!-------------------------------------->
 
-    <!-- Header Navigation Bar -->
+  <!-- Header Navigation Bar -->
 
-    <nav class="navbar navbar-expand navbar-light bg-light">
-      <div class="container-fluid d-flex flex-row">
-        <div class="justify-content-start">
-          <a href="index.html" class="nav-link">
-            <i class="material-icons align-middle px-3 justify-content-start">dashboard</i>
-          </a>
-        </div>
-        <span class="align-middle fs-3">Better2Learn</span>
-        <div class="dropdown dropstart ">
-          <a class="nav-link justify-content-end" href="#" id="navbarDropdownMenuLink" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="material-icons">menu</span>
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" id="logout" href="#">Log Out</a></li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-expand navbar-light bg-light">
+    <div class="container-fluid d-flex flex-row">
+      <div class="justify-content-start">
+        <a href="index.html" class="nav-link">
+          <i class="material-icons align-middle px-3 justify-content-start">dashboard</i>
+        </a>
       </div>
-    </nav>
-
-    <!-- END of Header Navigation Bar -->
-
-    <!-- Page Contents -->
-
-    <div id="white-header">
-      <div class="container p-3 d-flex flex-column align-items-center">
-        <h1 class="fs-1">Gradebook</h1>
-      </div>
-
-      <div>
-        <ul id="course-container">
-          <li>
-            <p id="course-comp1100" onclick="comp1100()">COMP 1100</p>
-          </li>
-          <li>
-            <p id="course-comp1113" onclick="comp1113()">COMP 1113</p>
-          </li>
-          <li>
-            <p id="course-comm1116" onclick="comm1116()">COMM 1116</p>
-          </li>
-          <li>
-            <p id="course-comp1510" onclick="comp1510()">COMP 1510</p>
-          </li>
-          <li>
-            <p id="course-comp1537" onclick="comp1537()">COMP 1537</p>
-          </li>
-          <li>
-            <p id="course-comp1712" onclick="comp1712()">COMP 1712</p>
-          </li>
-          <li>
-            <p id="course-comp1800" onclick="comp1800()">COMP 1800</p>
-          </li>
+      <span class="align-middle fs-3">BetterToLearn</span>
+      <div class="dropdown dropstart ">
+        <a class="nav-link justify-content-end" href="#" id="navbarDropdownMenuLink" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="material-icons">menu</span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" id="logout" href="#">Log Out</a></li>
         </ul>
       </div>
     </div>
+  </nav>
 
-    <div id="content">
-      <div id="comp1100" class="course">
-        <div class="accordion">
-          <h3><a href="#">Journals</a></h3>
-          <div>
-            <p id="c1100j1p">Journal 1<button type="button" id="set"
-                class="btn btn-outline-primary right">Set</button><span class="score"> /1</span><input id="c1100j1g"
-                type="text"></input></p>
-            <p>Journal 2<span class="score"> /1</span><input type="text"></input></p>
-            <p>Journal 3<span class="score"> /1</span><input type="text"></input></p>
-            <p>Journal 4<span class="score"> /1</span><input type="text"></input></p>
-            <p>Journal 5<span class="score"> /1</span><input type="text"></input></p>
-            <p>Journal 8<span class="score"> /1</span><input type="text"></input></p>
-            <p>Journal 9<span class="score"> /1</span><input type="text"></input></p>
-            <p>Journal 11<span class="score"> /1</span><input type="text"></input></p>
-            <p>Journal 12<span class="score"> /1</span><input type="text"></input></p>
-          </div>
-        </div>
-      </div>
+  <!-- END of Header Navigation Bar -->
 
+  <!-- Page Contents -->
 
-      <div id="comp1113" class="course">
-        <div class="accordion">
-          <h3><a href="#">Quizzes</a></h3>
-          <div>
-            <p>Quiz 1<span class="score"> /23</span><input type="text"></input></p>
-            <p>Quiz 2<span class="score"> /20</span><input type="text"></input></p>
-            <p>Quiz 3<span class="score"> /18</span><input type="text"></input></p>
-            <p>Quiz 4<span class="score"> /13</span><input type="text"></input></p>
-            <p>Quiz 5<span class="score"> /20</span><input type="text"></input></p>
-            <p>Quiz 6<span class="score"> /20</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Assignments</a></h3>
-          <div>
-            <p>Assignment 1<span class="score"> /21</span><input type="text"></input></p>
-            <p>Assignment 2<span class="score"> /36</span><input type="text"></input></p>
-            <p>Assignment 3<span class="score"> /34</span><input type="text"></input></p>
-            <p>Assignment 4<span class="score"> /27</span><input type="text"></input></p>
-            <p>Assignment 5<span class="score"> /27</span><input type="text"></input></p>
-            <p>Assignment 6<span class="score"> /26</span><input type="text"></input></p>
-            <p>Assignment 7<span class="score"> /27</span><input type="text"></input></p>
-            <p>Assignment 8<span class="score"> /15</span><input type="text"></input></p>
-            <p>Assignment 9<span class="score"> /20</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Exams</a></h3>
-          <div>
-            <p>Midterm Exam<span class="score"> /27</span><input type="text"></input></p>
-            <p>Final Exam<span class="score"> /30</span><input type="text"></input></p>
-          </div>
-        </div>
-      </div>
+  <div id="white-header">
+    <div class="container p-3 d-flex flex-column align-items-center">
+      <h1 class="fs-1">Gradebook</h1>
+    </div>
 
+    <div>
+      <ul id="course-container">
+        <li>
+          <p id="course-comp1100" onclick="comp1100()">COMP 1100</p>
+        </li>
+        <li>
+          <p id="course-comp1113" onclick="comp1113()">COMP 1113</p>
+        </li>
+        <li>
+          <p id="course-comm1116" onclick="comm1116()">COMM 1116</p>
+        </li>
+        <li>
+          <p id="course-comp1510" onclick="comp1510()">COMP 1510</p>
+        </li>
+        <li>
+          <p id="course-comp1537" onclick="comp1537()">COMP 1537</p>
+        </li>
+        <li>
+          <p id="course-comp1712" onclick="comp1712()">COMP 1712</p>
+        </li>
+        <li>
+          <p id="course-comp1800" onclick="comp1800()">COMP 1800</p>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-      <div id="comm1116" class="course">
-        <div class="accordion">
-          <h3><a href="#">Chapter Quizzes</a></h3>
-          <div>
-            <p>Chapter 1<span class="score"> /24</span><input type="text"></input></p>
-            <p>Chapter 2<span class="score"> /24</span><input type="text"></input></p>
-            <p>Chapter 3<span class="score"> /23</span><input type="text"></input></p>
-            <p>Chapter 4<span class="score"> /24</span><input type="text"></input></p>
-            <p>Chapter 5<span class="score"> /24</span><input type="text"></input></p>
-            <p>Chapter 6<span class="score"> /22</span><input type="text"></input></p>
-            <p>Chapter 7<span class="score"> /27</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Chapter Discussions</a></h3>
-          <div>
-            <p>Chapter 1<span class="score"> /5</span><input type="text"></input></p>
-            <p>Chapter 2<span class="score"> /5</span><input type="text"></input></p>
-            <p>Chapter 3<span class="score"> /5</span><input type="text"></input></p>
-            <p>Chapter 4<span class="score"> /5</span><input type="text"></input></p>
-            <p>Chapter 5<span class="score"> /5</span><input type="text"></input></p>
-            <p>Chapter 6<span class="score"> /5</span><input type="text"></input></p>
-            <p>Chapter 7<span class="score"> /5</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Midterm Exam</a></h3>
-          <div>
-            <p>Midterm Exam<span class="score"> /100</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Informal Report</a></h3>
-          <div>
-            <p>Informal Report<span class="score"> /100</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Oral Presentation</a></h3>
-          <div>
-            <p>Oral Presentation<span class="score"> /20</span><input type="text"></input></p>
-          </div>
-        </div>
-      </div>
-
-
-      <div id="comp1510" class="course">
-        <div class="accordion">
-          <h3><a href="#">Quizzes</a></h3>
-          <div>
-            <p>Quiz 1<span class="score"> /5</span><input type="text"></input></p>
-            <p>Quiz 2<span class="score"> /5</span><input type="text"></input></p>
-            <p>Quiz 3<span class="score"> /5</span><input type="text"></input></p>
-            <p>Quiz 4<span class="score"> /5</span><input type="text"></input></p>
-            <p>Quiz 5<span class="score"> /5</span><input type="text"></input></p>
-            <p>Quiz 6<span class="score"> /5</span><input type="text"></input></p>
-            <p>Quiz 7<span class="score"> /5</span><input type="text"></input></p>
-            <p>Quiz 8<span class="score"> /5</span><input type="text"></input></p>
-            <p>Quiz 9<span class="score"> /5</span><input type="text"></input></p>
-            <p>Quiz 10<span class="score"> /5</span><input type="text"></input></p>
-            <p>Quiz 11<span class="score"> /5</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Labs</a></h3>
-          <div>
-            <p>Lab 1<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 2<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 3<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 4<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 5<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 6<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 7<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 8<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 9<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 10<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 11<span class="score"> /5</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Assignments</a></h3>
-          <div>
-            <p>Assignment 1<span class="score"> /50</span><input type="text"></input></p>
-            <p>Assignment 2<span class="score"> /50</span><input type="text"></input></p>
-            <p>Assignment 3<span class="score"> /40</span><input type="text"></input></p>
-            <p>Assignment 4<span class="score"> /30</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Exams</a></h3>
-          <div>
-            <p>Midterm Exam<span class="score"> /70</span><input type="text"></input></p>
-            <p>Final Exam<span class="score"> /70</span><input type="text"></input></p>
-          </div>
-        </div>
-      </div>
-
-
-      <div id="comp1537" class="course">
-        <div class="accordion">
-          <h3><a href="#">Labs</a></h3>
-          <div>
-            <p>Lab 1<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 2<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 3<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 4<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 5<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 6<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 7<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 8<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 9<span class="score"> /5</span><input type="text"></input></p>
-            <p>Lab 10<span class="score"> /5</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Exams</a></h3>
-          <div>
-            <p>Midterm Exam<span class="score"> /47</span><input type="text"></input></p>
-            <p>Final Exam<span class="score"> /50</span><input type="text"></input></p>
-          </div>
-        </div>
-      </div>
-
-
-      <div id="comp1712" class="course">
-        <div class="accordion">
-          <h3><a href="#">Quizzes</a></h3>
-          <div>
-            <p>Quiz 1<span class="score"> /10</span><input type="text"></input></p>
-            <p>Quiz 2<span class="score"> /10</span><input type="text"></input></p>
-            <p>Quiz 3<span class="score"> /10</span><input type="text"></input></p>
-            <p>Quiz 4<span class="score"> /10</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Assignments</a></h3>
-          <div>
-            <p>SDLC Minicase<span class="score"> /1</span><input type="text"></input></p>
-            <p>Clarifying Vision Minicase<span class="score"> /1</span><input type="text"></input></p>
-            <p>Systems Request<span class="score"> /24</span><input type="text"></input></p>
-            <p>Business Process Model-First Draft<span class="score"> /1</span><input type="text"></input></p>
-            <p>Business Process Model-Second Draft<span class="score"> /12</span><input type="text"></input></p>
-            <p>Data Flow Diagram<span class="score"> /20</span><input type="text"></input></p>
-            <p>Use Case Analysis<span class="score"> /20</span><input type="text"></input></p>
-            <p>Present Value Analysis<span class="score"> /10</span><input type="text"></input></p>
-            <p>8 Golden Rules<span class="score"> /10</span><input type="text"></input></p>
-            <p>Entity Relationship Diagram<span class="score"> /20</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Exams</a></h3>
-          <div>
-            <p>Midterm Exam<span class="score"> /45</span><input type="text"></input></p>
-            <p>Final Exam<span class="score"> /50</span><input type="text"></input></p>
-          </div>
-        </div>
-      </div>
-
-
-      <div id="comp1800" class="course">
-        <div class="accordion">
-          <h3><a href="#">Individual Assignments</a></h3>
-          <div>
-            <p>Miro Assignment<span class="score"> /5</span><input type="text"></input></p>
-            <p>Webpage Re-design<span class="score"> /10</span><input type="text"></input></p>
-            <p>Content Wireframe<span class="score"> /10</span><input type="text"></input></p>
-            <p>Tech Mini 1<span class="score"> /3</span><input type="text"></input></p>
-            <p>Tech Mini 2<span class="score"> /3</span><input type="text"></input></p>
-            <p>Tech Mini 3<span class="score"> /3</span><input type="text"></input></p>
-            <p>Tech Mini 4<span class="score"> /3</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Team Assignments</a></h3>
-          <div>
-            <p>Preliminary Pitch<span class="score"> /10</span><input type="text"></input></p>
-            <p>UX Survey<span class="score"> /10</span><input type="text"></input></p>
-            <p>Persona, User Story, Task-flow<span class="score"> /10</span><input type="text"></input></p>
-            <p>Test Report<span class="score"> /10</span><input type="text"></input></p>
-            <p>Github and Centralized Workflow<span class="score"> /10</span><input type="text"></input></p>
-            <p>Sprint 1<span class="score"> /10</span><input type="text"></input></p>
-            <p>Sprint 2<span class="score"> /10</span><input type="text"></input></p>
-            <p>Sprint 3<span class="score"> /10</span><input type="text"></input></p>
-            <p>Sprint 4<span class="score"> /10</span><input type="text"></input></p>
-            <p>Project Pitch Presentation<span class="score"> /100</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Active Learning Assessments</a></h3>
-          <div>
-            <p>Lecture Quiz 1<span class="score"> /3</span><input type="text"></input></p>
-            <p>Lecture Quiz 2<span class="score"> /3</span><input type="text"></input></p>
-            <p>Pre-Lecture Quiz 1<span class="score"> /5</span><input type="text"></input></p>
-            <p>Pre-Lecture Quiz 2<span class="score"> /5</span><input type="text"></input></p>
-            <p>Pre-Lecture Quiz 3<span class="score"> /5</span><input type="text"></input></p>
-            <p>Pre-Lecture Quiz 4<span class="score"> /5</span><input type="text"></input></p>
-            <p>Pre-Lecture Quiz 5<span class="score"> /5</span><input type="text"></input></p>
-            <p>Midterm Self-Assessment<span class="score"> /3</span><input type="text"></input></p>
-          </div>
-        </div>
-        <div class="accordion">
-          <h3><a href="#">Final Project</a></h3>
-          <div>
-            <p>Final Project<span class="score"> /30</span><input type="text"></input></p>
-          </div>
+  <div id="content">
+    <div id="comp1100" class="course">
+      <div class="accordion">
+        <h3><a href="#">Journals</a></h3>
+        <div>
+          <p id="c1100j1p">Journal 1<button type="button" id="set"
+              class="btn btn-outline-primary right">Set</button><span class="score"> /1</span><input id="c1100j1g"
+              type="text"></input></p>
+          <p>Journal 2<span class="score"> /1</span><input type="text"></input></p>
+          <p>Journal 3<span class="score"> /1</span><input type="text"></input></p>
+          <p>Journal 4<span class="score"> /1</span><input type="text"></input></p>
+          <p>Journal 5<span class="score"> /1</span><input type="text"></input></p>
+          <p>Journal 8<span class="score"> /1</span><input type="text"></input></p>
+          <p>Journal 9<span class="score"> /1</span><input type="text"></input></p>
+          <p>Journal 11<span class="score"> /1</span><input type="text"></input></p>
+          <p>Journal 12<span class="score"> /1</span><input type="text"></input></p>
         </div>
       </div>
     </div>
 
-    <!-- END of Page Contents -->
 
-    <!-- Footer Navigation Bar -->
+    <div id="comp1113" class="course">
+      <div class="accordion">
+        <h3><a href="#">Quizzes</a></h3>
+        <div>
+          <p>Quiz 1<span class="score"> /23</span><input type="text"></input></p>
+          <p>Quiz 2<span class="score"> /20</span><input type="text"></input></p>
+          <p>Quiz 3<span class="score"> /18</span><input type="text"></input></p>
+          <p>Quiz 4<span class="score"> /13</span><input type="text"></input></p>
+          <p>Quiz 5<span class="score"> /20</span><input type="text"></input></p>
+          <p>Quiz 6<span class="score"> /20</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Assignments</a></h3>
+        <div>
+          <p>Assignment 1<span class="score"> /21</span><input type="text"></input></p>
+          <p>Assignment 2<span class="score"> /36</span><input type="text"></input></p>
+          <p>Assignment 3<span class="score"> /34</span><input type="text"></input></p>
+          <p>Assignment 4<span class="score"> /27</span><input type="text"></input></p>
+          <p>Assignment 5<span class="score"> /27</span><input type="text"></input></p>
+          <p>Assignment 6<span class="score"> /26</span><input type="text"></input></p>
+          <p>Assignment 7<span class="score"> /27</span><input type="text"></input></p>
+          <p>Assignment 8<span class="score"> /15</span><input type="text"></input></p>
+          <p>Assignment 9<span class="score"> /20</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Exams</a></h3>
+        <div>
+          <p>Midterm Exam<span class="score"> /27</span><input type="text"></input></p>
+          <p>Final Exam<span class="score"> /30</span><input type="text"></input></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="comm1116" class="course">
+      <div class="accordion">
+        <h3><a href="#">Chapter Quizzes</a></h3>
+        <div>
+          <p>Chapter 1<span class="score"> /24</span><input type="text"></input></p>
+          <p>Chapter 2<span class="score"> /24</span><input type="text"></input></p>
+          <p>Chapter 3<span class="score"> /23</span><input type="text"></input></p>
+          <p>Chapter 4<span class="score"> /24</span><input type="text"></input></p>
+          <p>Chapter 5<span class="score"> /24</span><input type="text"></input></p>
+          <p>Chapter 6<span class="score"> /22</span><input type="text"></input></p>
+          <p>Chapter 7<span class="score"> /27</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Chapter Discussions</a></h3>
+        <div>
+          <p>Chapter 1<span class="score"> /5</span><input type="text"></input></p>
+          <p>Chapter 2<span class="score"> /5</span><input type="text"></input></p>
+          <p>Chapter 3<span class="score"> /5</span><input type="text"></input></p>
+          <p>Chapter 4<span class="score"> /5</span><input type="text"></input></p>
+          <p>Chapter 5<span class="score"> /5</span><input type="text"></input></p>
+          <p>Chapter 6<span class="score"> /5</span><input type="text"></input></p>
+          <p>Chapter 7<span class="score"> /5</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Midterm Exam</a></h3>
+        <div>
+          <p>Midterm Exam<span class="score"> /100</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Informal Report</a></h3>
+        <div>
+          <p>Informal Report<span class="score"> /100</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Oral Presentation</a></h3>
+        <div>
+          <p>Oral Presentation<span class="score"> /20</span><input type="text"></input></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="comp1510" class="course">
+      <div class="accordion">
+        <h3><a href="#">Quizzes</a></h3>
+        <div>
+          <p>Quiz 1<span class="score"> /5</span><input type="text"></input></p>
+          <p>Quiz 2<span class="score"> /5</span><input type="text"></input></p>
+          <p>Quiz 3<span class="score"> /5</span><input type="text"></input></p>
+          <p>Quiz 4<span class="score"> /5</span><input type="text"></input></p>
+          <p>Quiz 5<span class="score"> /5</span><input type="text"></input></p>
+          <p>Quiz 6<span class="score"> /5</span><input type="text"></input></p>
+          <p>Quiz 7<span class="score"> /5</span><input type="text"></input></p>
+          <p>Quiz 8<span class="score"> /5</span><input type="text"></input></p>
+          <p>Quiz 9<span class="score"> /5</span><input type="text"></input></p>
+          <p>Quiz 10<span class="score"> /5</span><input type="text"></input></p>
+          <p>Quiz 11<span class="score"> /5</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Labs</a></h3>
+        <div>
+          <p>Lab 1<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 2<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 3<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 4<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 5<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 6<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 7<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 8<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 9<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 10<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 11<span class="score"> /5</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Assignments</a></h3>
+        <div>
+          <p>Assignment 1<span class="score"> /50</span><input type="text"></input></p>
+          <p>Assignment 2<span class="score"> /50</span><input type="text"></input></p>
+          <p>Assignment 3<span class="score"> /40</span><input type="text"></input></p>
+          <p>Assignment 4<span class="score"> /30</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Exams</a></h3>
+        <div>
+          <p>Midterm Exam<span class="score"> /70</span><input type="text"></input></p>
+          <p>Final Exam<span class="score"> /70</span><input type="text"></input></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="comp1537" class="course">
+      <div class="accordion">
+        <h3><a href="#">Labs</a></h3>
+        <div>
+          <p>Lab 1<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 2<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 3<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 4<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 5<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 6<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 7<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 8<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 9<span class="score"> /5</span><input type="text"></input></p>
+          <p>Lab 10<span class="score"> /5</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Exams</a></h3>
+        <div>
+          <p>Midterm Exam<span class="score"> /47</span><input type="text"></input></p>
+          <p>Final Exam<span class="score"> /50</span><input type="text"></input></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="comp1712" class="course">
+      <div class="accordion">
+        <h3><a href="#">Quizzes</a></h3>
+        <div>
+          <p>Quiz 1<span class="score"> /10</span><input type="text"></input></p>
+          <p>Quiz 2<span class="score"> /10</span><input type="text"></input></p>
+          <p>Quiz 3<span class="score"> /10</span><input type="text"></input></p>
+          <p>Quiz 4<span class="score"> /10</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Assignments</a></h3>
+        <div>
+          <p>SDLC Minicase<span class="score"> /1</span><input type="text"></input></p>
+          <p>Clarifying Vision Minicase<span class="score"> /1</span><input type="text"></input></p>
+          <p>Systems Request<span class="score"> /24</span><input type="text"></input></p>
+          <p>Business Process Model-First Draft<span class="score"> /1</span><input type="text"></input></p>
+          <p>Business Process Model-Second Draft<span class="score"> /12</span><input type="text"></input></p>
+          <p>Data Flow Diagram<span class="score"> /20</span><input type="text"></input></p>
+          <p>Use Case Analysis<span class="score"> /20</span><input type="text"></input></p>
+          <p>Present Value Analysis<span class="score"> /10</span><input type="text"></input></p>
+          <p>8 Golden Rules<span class="score"> /10</span><input type="text"></input></p>
+          <p>Entity Relationship Diagram<span class="score"> /20</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Exams</a></h3>
+        <div>
+          <p>Midterm Exam<span class="score"> /45</span><input type="text"></input></p>
+          <p>Final Exam<span class="score"> /50</span><input type="text"></input></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="comp1800" class="course">
+      <div class="accordion">
+        <h3><a href="#">Individual Assignments</a></h3>
+        <div>
+          <p>Miro Assignment<span class="score"> /5</span><input type="text"></input></p>
+          <p>Webpage Re-design<span class="score"> /10</span><input type="text"></input></p>
+          <p>Content Wireframe<span class="score"> /10</span><input type="text"></input></p>
+          <p>Tech Mini 1<span class="score"> /3</span><input type="text"></input></p>
+          <p>Tech Mini 2<span class="score"> /3</span><input type="text"></input></p>
+          <p>Tech Mini 3<span class="score"> /3</span><input type="text"></input></p>
+          <p>Tech Mini 4<span class="score"> /3</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Team Assignments</a></h3>
+        <div>
+          <p>Preliminary Pitch<span class="score"> /10</span><input type="text"></input></p>
+          <p>UX Survey<span class="score"> /10</span><input type="text"></input></p>
+          <p>Persona, User Story, Task-flow<span class="score"> /10</span><input type="text"></input></p>
+          <p>Test Report<span class="score"> /10</span><input type="text"></input></p>
+          <p>Github and Centralized Workflow<span class="score"> /10</span><input type="text"></input></p>
+          <p>Sprint 1<span class="score"> /10</span><input type="text"></input></p>
+          <p>Sprint 2<span class="score"> /10</span><input type="text"></input></p>
+          <p>Sprint 3<span class="score"> /10</span><input type="text"></input></p>
+          <p>Sprint 4<span class="score"> /10</span><input type="text"></input></p>
+          <p>Project Pitch Presentation<span class="score"> /100</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Active Learning Assessments</a></h3>
+        <div>
+          <p>Lecture Quiz 1<span class="score"> /3</span><input type="text"></input></p>
+          <p>Lecture Quiz 2<span class="score"> /3</span><input type="text"></input></p>
+          <p>Pre-Lecture Quiz 1<span class="score"> /5</span><input type="text"></input></p>
+          <p>Pre-Lecture Quiz 2<span class="score"> /5</span><input type="text"></input></p>
+          <p>Pre-Lecture Quiz 3<span class="score"> /5</span><input type="text"></input></p>
+          <p>Pre-Lecture Quiz 4<span class="score"> /5</span><input type="text"></input></p>
+          <p>Pre-Lecture Quiz 5<span class="score"> /5</span><input type="text"></input></p>
+          <p>Midterm Self-Assessment<span class="score"> /3</span><input type="text"></input></p>
+        </div>
+      </div>
+      <div class="accordion">
+        <h3><a href="#">Final Project</a></h3>
+        <div>
+          <p>Final Project<span class="score"> /30</span><input type="text"></input></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- END of Page Contents -->
+
+  <!-- Footer Navigation Bar -->
 
   <div id="bottom-nav">
     <div id="home">
@@ -429,6 +429,6 @@
       keepGrade();
     </script>
 
-  </body>
+</body>
 
 </html>
