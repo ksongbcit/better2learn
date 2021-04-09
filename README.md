@@ -31,27 +31,30 @@ Content of the project folder:
 ├── Tasktracker.html         # allows user to enter items to a to-do list and track their progress
                                through the term
 ├── Schedule.html            # allows user to see class times and deadlines for all courses
-└── README.md
+└── README.md                # information on our application
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
     /background.jpg             # background image on all pages of application
 ├── scripts                  # Folder for scripts
-    /course-display.js          # functions for changing colour and display of items depending on
-                                  which course is selected
+    ├── gradebook-scripts       # Folder for gradebook scripts
+        /course-display.js          # functions for changing colour and display of items depending on
+                                      which course is selected
+        /grades-set.js              # functions to setting, seeing, and changing grades
     /firebase-api.js            # API keys for firestore database
-    /grades-set.js              # functions to setting, seeing, and changing grades
     /login.js                   # functions for login and creating initial collections in firestore
     /main.js                    # functions for customized experience upon login
     /tasktracker.js             # KYUNG
 ├── styles                   # Folder for styles
+    ├── gradebook-styles        # Folder for gradebook styles
+        /gradebook.css              # styling for gradebook feature
+    ├── scedule-styles        # Folder for gradebook styles
+        /schedulestyle.css          # styling for schedule feature
     /bottom-nav.css             # styling of bottom navigation bar
-    /gradebook.css              # styling for gradebook feature
     /indexstyles.css            # styling for index landing page
     /loginstyles.css            # styling for login page
     /mainstyles.css             # styling for main landing page after user has logged in
-    /schedulestyle.css          # styling for schedule feature
     /tasktrackerstyle.css       # styling for tasktracker feature
 
 Firebase hosting files: 
