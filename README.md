@@ -14,6 +14,8 @@ Technologies used for this project:
 * JavaScript
 * Bootstrap 
 * JQueryUI
+* Firestore
+* Firebase
 	
 ## Content
 Content of the project folder:
