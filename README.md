@@ -71,7 +71,7 @@ It has the following subfolders and files:
         /course-display.js          # functions for changing colour and display of items depending
                                       on which course is selected
         /grades-set.js              # functions to setting, seeing, and changing grades
-    ├── tasktracker-scripts
+    ├── tasktracker-scripts     # Folder for tasktracker scripts
         /tasktracker.js             # contains functions relevant to the tracker page:
                                     # function for saving input values to firestore database,
                                     # realtime listeners for populating todo list, complete list,
