@@ -90,7 +90,6 @@ function timeSpent(duedate, duetime) {
     } else {
       resultminute = todayminute - dueminute;
       result += `You finished EARLY by ${Math.abs(resulthour)} hours and ${Math.abs(resultminute)} minutes!`;
-      console.log(resultminute);
     }
     // Completed same day, same hour before/after due minutes.
   } else if (resultday == 0 && resulthour == 0) {
@@ -101,12 +100,12 @@ function timeSpent(duedate, duetime) {
     }
     // Completed same day, late
   } else if (resultday == 0 && resulthour > 0) {
-    if (todayminute > dueminute) {
-      resultminute = todayminute - dueminute;
-      result += `You finished LATE by ${resulthour} hours and ${resultminute} minutes!`
-    } else {
+    if (todayminute < dueminute) {
       resulthour -= 1;
       resultminute = (todayminute + 60) - dueminute;
+      result += `You finished LATE by ${resulthour} hours and ${resultminute} minutes!`
+    } else {
+      resultminute = todayminute - dueminute;
       result += `You finished LATE by ${resulthour} hours and ${resultminute} minutes!`
     }
     // Completed on a different day
