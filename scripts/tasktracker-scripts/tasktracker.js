@@ -19,6 +19,8 @@ function getInputsAndAdd() {
         let duedate = document.getElementById('newitemduedate').value;
         let duetime = document.getElementById('newitemduetime').value;
 
+        console.log(startdate);
+
         // Alert if there are missing fields
         if (title == "" || startdate == "" || starttime == "" || duedate == "" || duetime == "") {
           alert("Please enter all fields!");
@@ -60,6 +62,71 @@ function to12HourFormat(timedata) {
   }
 }
 
+// Calculate elapsed time and return string
+function timeSpent(duedate, duetime) {
+  // Due time data
+  let dueday = parseInt(duedate.substr(8, 2));
+  let duehour = parseInt(duetime.substr(0, 2));
+  let dueminute = parseInt(duetime.substr(3, 2));
+
+  // Completed time data
+  let today = new Date();
+  let todayday = today.getDate();
+  let todayhour = today.getHours();
+  let todayminute = today.getMinutes();
+
+  // Calculating difference in due time and current time
+  let resultday = todayday - dueday;
+  let resulthour = todayhour - duehour;
+  let resultminute = todayminute - dueminute;
+  let result = "";
+
+  // Completed same day, early
+  if (resultday == 0 && resulthour < 0) {
+    if (todayminute > dueminute) {
+      resulthour += 1;
+      resultminute = todayminute - (dueminute + 60);
+      result += `You finished EARLY by ${Math.abs(resulthour)} hours and ${Math.abs(resultminute)} minutes!`;
+    } else {
+      resultminute = todayminute - dueminute;
+      result += `You finished EARLY by ${Math.abs(resulthour)} hours and ${Math.abs(resultminute)} minutes!`;
+      console.log(resultminute);
+    }
+    // Completed same day, same hour before/after due minutes.
+  } else if (resultday == 0 && resulthour == 0) {
+    if (resultminute < 0) {
+      result += `You finished EARLY by ${Math.abs(resultminute)} minutes!`
+    } else {
+      result += `You finished LATE by ${resultminute} minutes!`
+    }
+    // Completed same day, late
+  } else if (resultday == 0 && resulthour > 0) {
+    if (todayminute > dueminute) {
+      resultminute = todayminute - dueminute;
+      result += `You finished LATE by ${resulthour} hours and ${resultminute} minutes!`
+    } else {
+      resulthour -= 1;
+      resultminute = (todayminute + 60) - dueminute;
+      result += `You finished LATE by ${resulthour} hours and ${resultminute} minutes!`
+    }
+    // Completed on a different day
+  } else {
+    resulthour = (todayhour + 24) - duehour
+    if (resulthour < 5) {
+      if (todayminute > dueminute) {
+        resultminute = todayminute - dueminute;
+        result += `You finished LATE by ${Math.abs(resulthour)} hours and ${Math.abs(resultminute)} minutes!`;
+      } else {
+        resulthour -= 1;
+        resultminute = (todayminute + 60) - dueminute;
+        result += `You finished LATE by ${Math.abs(resulthour)} hours and ${Math.abs(resultminute)} minutes!`;
+      }
+    } else {
+      result += "You finished LATE by more than 5 hours, try rescheduling the task!"
+    }
+  }
+  return result;
+}
 
 // Realtime listener for todo items
 auth.onAuthStateChanged(user => {
@@ -78,23 +145,36 @@ auth.onAuthStateChanged(user => {
             let times = document.createElement('span');
             let id = change.doc.id;
 
-            itemtitle.innerHTML = change.doc.data().title;
-            times.innerHTML = "<b>Start</b> at " + to12HourFormat(change.doc.data().starttime) + " on <i>" + change.doc.data().startdate + "</i>";
-            times.innerHTML += "</br><b>Due</b> at " + to12HourFormat(change.doc.data().duetime) + " on <i>" + change.doc.data().duedate + "</i>";
+            // Variable for date and time data
+            let savedstartdate = change.doc.data().startdate;
+            let savedstarttime = change.doc.data().starttime;
+            let savedduedate = change.doc.data().duedate;
+            let savedduetime = change.doc.data().duetime;
 
-            // Creating done button and adding event listener to complete a todo item
+            // Showing the date and times for the item
+            itemtitle.innerHTML = change.doc.data().title;
+            times.innerHTML = "<b>Start</b> at " + to12HourFormat(savedstarttime) + " on <i>" + savedstartdate + "</i>";
+            times.innerHTML += "</br><b>Due</b> at " + to12HourFormat(savedduetime) + " on <i>" + savedduedate + "</i>";
+
+
+
+            // Creating done button
             let donebutton = document.createElement('button');
             let i = document.createElement('i');
             i.className = 'material-icons';
             i.textContent = 'check_circle';
             donebutton.appendChild(i);
 
+            // Adding event listener to complete a todo item
             donebutton.addEventListener('click', () => {
               console.log(id);
               db.collection('users').doc(user.uid).collection('todolist').doc(id).update({
                 complete: true
               });
-              console.log("Update success")
+              console.log("Update success");
+
+              console.log(timeSpent(savedduedate, savedduetime));
+
               todolist.removeChild(itemcard);
             });
 
@@ -133,6 +213,13 @@ auth.onAuthStateChanged(user => {
             i.className = 'material-icons';
             i.textContent = 'delete';
             deletebutton.appendChild(i);
+
+            // Variables for date and time data
+            let savedstartdate = change.doc.data().startdate;
+            let savedstarttime = change.doc.data().starttime;
+            let savedduedate = change.doc.data().duedate;
+            let savedduetime = change.doc.data().duetime;
+
             // Event removes from database
             deletebutton.addEventListener('click', () => {
               console.log(id);
@@ -143,8 +230,8 @@ auth.onAuthStateChanged(user => {
             });
 
             itemtitle.innerHTML = change.doc.data().title;
-            times.innerHTML = "<b>Start</b> at " + to12HourFormat(change.doc.data().starttime) + " on <i>" + change.doc.data().startdate + "</i>";
-            times.innerHTML += "</br><b>Due</b> at " + to12HourFormat(change.doc.data().duetime) + " on <i>" + change.doc.data().duedate + "</i>";
+            times.innerHTML = "<b>Start</b> at " + to12HourFormat(savedstarttime) + " on <i>" + savedstartdate + "</i>";
+            times.innerHTML += "</br><b>Due</b> at " + to12HourFormat(savedduetime) + " on <i>" + savedduedate + "</i>";
 
             // Appending elements to item card
             itemcard.appendChild(itemtitle);

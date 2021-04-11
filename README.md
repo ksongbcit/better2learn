@@ -6,8 +6,8 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to help student develop organizational skills and better manage
-their time and workload.
+This is a browser based web application to help student develop organizational skills and better
+manage their time and workload.
 
 Problem: Online learning environments require students to have strong self-discipline and
 organization. The current option of LearningHub is lacking in many areas, leading to student
