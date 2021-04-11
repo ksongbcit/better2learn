@@ -6,31 +6,32 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
-	
+This is a browser based web application to help students manage their schedule, keep
+a personalized todo list, and maintain a gradebook.
+
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
 * JavaScript
-* Bootstrap 
+* Bootstrap
 * JQueryUI
 * Firestore
 * Firebase
-	
+
 ## Content
 Content of the project folder:
 
 ```
- Top level of project folder: 
+ Top level of project folder:
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
 ├── login.html               # allows user to log in for customized experience
 ├── main.html                # landing page after user has signed in
-├── GradeBook.html           # allows user to enter and track grades they receive on assessments
+├── gradeBook.html           # allows user to enter and track grades they receive on assessments
                                throughout the term
-├── Tasktracker.html         # allows user to enter items to a to-do list and track their progress
+├── tasktracker.html         # allows user to enter items to a to-do list and track their progress
                                through the term
-├── Schedule.html            # allows user to see class times and deadlines for all courses
+├── schedule.html            # allows user to see class times and deadlines for all courses
 └── README.md                # information on our application
 
 It has the following subfolders and files:
@@ -42,22 +43,29 @@ It has the following subfolders and files:
         /course-display.js          # functions for changing colour and display of items depending on
                                       which course is selected
         /grades-set.js              # functions to setting, seeing, and changing grades
+    ├── tasktracker-scripts
+        /tasktracker.js             # contains functions relevant to the tracker page:
+                                    # function for saving input values to firestore database,
+                                    # realtime listeners for populating todo list, complete list,
+                                    # function to calculate statistics in terms of time.
     /firebase-api.js            # API keys for firestore database
     /login.js                   # functions for login and creating initial collections in firestore
+    /logout.js                  # function for signing out from firebase authentication.
     /main.js                    # functions for customized experience upon login
-    /tasktracker.js             # KYUNG
+
 ├── styles                   # Folder for styles
     ├── gradebook-styles        # Folder for gradebook styles
         /gradebook.css              # styling for gradebook feature
-    ├── scedule-styles        # Folder for gradebook styles
+    ├── scedule-styles          # Folder for gradebook styles
         /schedulestyle.css          # styling for schedule feature
+    ├── tasktracker-styles      # Folder for tasktracker styles
+        /tasktrackerstyle.css       # styling for tasktracker feature
     /bottom-nav.css             # styling of bottom navigation bar
     /indexstyles.css            # styling for index landing page
     /loginstyles.css            # styling for login page
     /mainstyles.css             # styling for main landing page after user has logged in
-    /tasktrackerstyle.css       # styling for tasktracker feature
 
-Firebase hosting files: 
+Firebase hosting files:
 ├── .firebaserc...
 
 
