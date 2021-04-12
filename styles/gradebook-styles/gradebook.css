@@ -66,3 +66,9 @@ input {
     line-height: 14pt;
     font-size: 14pt;
 }
+
+.grade {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}

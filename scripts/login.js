@@ -54,7 +54,7 @@ var uiConfig = {
           c1113q5: null,
           c1113q5s: 20,
           c1113q6: null,
-          c1113q6s: null,
+          c1113q6s: 10,
           c1113a1: null,
           c1113a1s: 21,
           c1113a2: null,
@@ -76,7 +76,7 @@ var uiConfig = {
           c1113e1: null,
           c1113e1s: 27,
           c1113e2: null,
-          c1113e2s: null,
+          c1113e2s: 30,
 
           c1116q1: null,
           c1116q1s: 24,
@@ -168,7 +168,7 @@ var uiConfig = {
           c1510e1: null,
           c1510e1s: 70,
           c1510e2: null,
-          c1510e2s: null,
+          c1510e2s: 70,
 
           c1537l1: null,
           c1537l1s: 5,
@@ -193,7 +193,7 @@ var uiConfig = {
           c1537e1: null,
           c1537e1s: 47,
           c1537e2: null,
-          c1537e2s: null,
+          c1537e2s: 50,
 
           c1712q1: null,
           c1712q1s: 10,
@@ -226,7 +226,7 @@ var uiConfig = {
           c1712e1: null,
           c1712e1s: 45,
           c1712e2: null,
-          c1712e2s: null,
+          c1712e2s: 50,
 
           c1800ia1: null,
           c1800ia1s: 5,
