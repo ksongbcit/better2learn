@@ -1,5 +1,15 @@
 const logout = document.getElementById('logout');
 
+// Restrict users from navigating without authentication.
+auth.onAuthStateChanged(function (user) {
+  if (user) {
+    console.log(user.uid);
+  } else {
+    location.assign('login.html');
+  }
+});
+
+// Log out function
 function quit() {
   logout.addEventListener('click', (e) => {
 
