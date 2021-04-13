@@ -15,6 +15,7 @@ body {
 
 .container .trackertitle {
   text-align: center;
+  padding-top: 15px;
 }
 
 #nav-tab {
@@ -43,28 +44,45 @@ body {
 }
 
 .itemcard {
-  background-color: rgba(13, 110, 253, 0.20);
+  background-color: rgba(13, 110, 253, 0.30);
   border-radius: 10px;
   padding: 5px;
+  margin: 10px;
 }
 
-.itemcard h4 {
+.itemcard h4,
+.itemcarddone h4 {
   background-color: white;
   border-radius: 5px;
   padding: 7px;
 }
 
 .itemcard span {
-
   font-size: 14px;
+  padding-left: 15px;
 }
 
-.itemcard button {
+.itemcard button,
+.itemcarddone button {
+  float: right;
   border-style: none;
   background-color: transparent;
-  color: ;
 }
 
-.itemcard i {
-  font-size: 48px;
+.itemcarddone {
+  background-color: rgba(253, 149, 13, 0.3);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.itemcarddone span {
+  font-size: 14px;
+  padding-left: 15px;
+  text-decoration: line-through;
+}
+
+.resultstyle {
+  font-weight: bold;
+  text-decoration: none !important;
 }

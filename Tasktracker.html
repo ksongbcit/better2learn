@@ -70,9 +70,6 @@
             <button class="nav-link" id="nav-done-tab" data-bs-toggle="tab" data-bs-target="#nav-done" type="button"
               role="tab" aria-controls="nav-done" aria-selected="false">
               <span class="material-icons">assignment_turned_in</span><span class="tabname">Done</span></button>
-            <button class="nav-link" id="nav-stats-tab" data-bs-toggle="tab" data-bs-target="#nav-stats" type="button"
-              role="tab" aria-controls="nav-stats" aria-selected="false">
-              <span class="material-icons">assessment</span><span class="tabname">Stats</span></button>
           </div>
         </nav>
 
@@ -86,8 +83,8 @@
             <p class="fs-5 text-center">&#9998; Add to-do items under the <b>'To-do'</b> tab.<br />
               <br />&#9998; Specify start and finish times to each item to help plan your days.<br />
               <br />&#10004; Once you've completed a task, move it to the <b>'Done'</b> tab by pressing the done
-              button<br />
-              <br />&#10004; Check your completion statistics in the <b>'Stats'</b> tab.<br />
+              button.<br />
+              <br />&#10004; Completed items will tell you whether you were <b>early</b> or <b>late</b>.<br />
               <br />&#128077; Use this tool to help <b>yourself</b> stay on track.<br />
             </p>
           </div>
@@ -99,10 +96,10 @@
             </p>
             <form id="inputtab" class="text-center">
               <p class="fs-5">Task details</p>
-              <input type="text" size="40" id="newitem" name="itemtitle" placeholder="What do you need to do?" /><br />
-              <p> Start date : <input type="date" id="newitemstartdate" name="itemstartdate" /> At :
+              <input type="text" size="46" id="newitem" name="itemtitle" placeholder="What do you need to do?" /><br />
+              <p> Start : <input type="date" id="newitemstartdate" name="itemstartdate" />
                 <input type="time" id="newitemstarttime" name="itemstarttime" /> </p>
-              <p> Due date : <input type="date" id="newitemduedate" name="itemduedate" /> At :
+              <p> Due : <input type="date" id="newitemduedate" name="itemduedate" />
                 <input type="time" id="newitemduetime" name="itemduetime" /></p>
               <input type="reset" value="Reset" />
               <input type="submit" id="saveitem" value="Save" name="save" />
@@ -124,7 +121,6 @@
             <div id="statslist">
             </div>
           </div>
-
         </div>
       </div>
     </div>

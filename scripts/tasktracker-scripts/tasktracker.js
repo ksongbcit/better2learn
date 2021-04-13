@@ -86,27 +86,27 @@ function timeSpent(duedate, duetime) {
     if (todayminute > dueminute) {
       resulthour += 1;
       resultminute = todayminute - (dueminute + 60);
-      result += `You finished EARLY by ${Math.abs(resulthour)} hours and ${Math.abs(resultminute)} minutes!`;
+      result += `You finished EARLY by ${Math.abs(resulthour)} hrs and ${Math.abs(resultminute)} mins!`;
     } else {
       resultminute = todayminute - dueminute;
-      result += `You finished EARLY by ${Math.abs(resulthour)} hours and ${Math.abs(resultminute)} minutes!`;
+      result += `You finished EARLY by ${Math.abs(resulthour)} hrs and ${Math.abs(resultminute)} mins!`;
     }
     // Completed same day, same hour before/after due minutes.
   } else if (resultday == 0 && resulthour == 0) {
     if (resultminute < 0) {
-      result += `You finished EARLY by ${Math.abs(resultminute)} minutes!`
+      result += `You finished EARLY by ${Math.abs(resultminute)} mins!`
     } else {
-      result += `You finished LATE by ${resultminute} minutes!`
+      result += `You finished LATE by ${resultminute} mins!`
     }
     // Completed same day, late
   } else if (resultday == 0 && resulthour > 0) {
     if (todayminute < dueminute) {
       resulthour -= 1;
       resultminute = (todayminute + 60) - dueminute;
-      result += `You finished LATE by ${resulthour} hours and ${resultminute} minutes!`
+      result += `You finished LATE by ${resulthour} hrs and ${resultminute} mins!`
     } else {
       resultminute = todayminute - dueminute;
-      result += `You finished LATE by ${resulthour} hours and ${resultminute} minutes!`
+      result += `You finished LATE by ${resulthour} hrs and ${resultminute} mins!`
     }
     // Completed on a different day
   } else {
@@ -114,11 +114,11 @@ function timeSpent(duedate, duetime) {
     if (resulthour < 5) {
       if (todayminute > dueminute) {
         resultminute = todayminute - dueminute;
-        result += `You finished LATE by ${Math.abs(resulthour)} hours and ${Math.abs(resultminute)} minutes!`;
+        result += `You finished LATE by ${Math.abs(resulthour)} hrs and ${Math.abs(resultminute)} mins!`;
       } else {
         resulthour -= 1;
         resultminute = (todayminute + 60) - dueminute;
-        result += `You finished LATE by ${Math.abs(resulthour)} hours and ${Math.abs(resultminute)} minutes!`;
+        result += `You finished LATE by ${Math.abs(resulthour)} hrs and ${Math.abs(resultminute)} mins!`;
       }
     } else {
       result += "Your due date and time was off more than 5 hours, try scheduling for a reasonable amount of time!"
@@ -141,7 +141,8 @@ auth.onAuthStateChanged(user => {
             let itemcard = document.createElement('div');
             itemcard.className = 'itemcard';
             let itemtitle = document.createElement('h4');
-            let times = document.createElement('span');
+            let timestart = document.createElement('span');
+            let timedue = document.createElement('span');
             let id = change.doc.id;
 
             // Variable for date and time data
@@ -152,10 +153,8 @@ auth.onAuthStateChanged(user => {
 
             // Showing the date and times for the item
             itemtitle.innerHTML = change.doc.data().title;
-            times.innerHTML = "<b>Start</b> at " + to12HourFormat(savedstarttime) + " on " + savedstartdate;
-            times.innerHTML += "</br><b>Due</b> at " + to12HourFormat(savedduetime) + " on " + savedduedate;
-
-
+            timestart.innerHTML = "<b>Start</b> at " + to12HourFormat(savedstarttime) + " on " + savedstartdate + "</br>";
+            timedue.innerHTML = "<b>Due</b> at " + to12HourFormat(savedduetime) + " on " + savedduedate;
 
             // Creating done button
             let donebutton = document.createElement('button');
@@ -168,18 +167,17 @@ auth.onAuthStateChanged(user => {
             donebutton.addEventListener('click', () => {
               console.log(id);
               db.collection('users').doc(user.uid).collection('todolist').doc(id).update({
-                complete: true
+                complete: true,
+                result: timeSpent(savedduedate, savedduetime)
               });
               console.log("Update success");
-
-              console.log(timeSpent(savedduedate, savedduetime));
-
               todolist.removeChild(itemcard);
             });
 
             // Appending elements to item card
             itemcard.appendChild(itemtitle);
-            itemcard.appendChild(times);
+            itemcard.appendChild(timestart);
+            itemcard.appendChild(timedue);
             itemcard.appendChild(donebutton);
             todolist.appendChild(itemcard);
           }
@@ -201,9 +199,12 @@ auth.onAuthStateChanged(user => {
             console.log("Done item: ", change.doc.data());
 
             let itemcard = document.createElement('div');
-            itemcard.className = 'itemcard';
+            itemcard.className = 'itemcarddone';
             let itemtitle = document.createElement('h4');
-            let times = document.createElement('span');
+            let timestart = document.createElement('span');
+            let timedue = document.createElement('span');
+            let result = document.createElement('span');
+            result.className = 'resultstyle';
             let id = change.doc.id;
 
             // Creating delete button and adding event listener
@@ -218,6 +219,7 @@ auth.onAuthStateChanged(user => {
             let savedstarttime = change.doc.data().starttime;
             let savedduedate = change.doc.data().duedate;
             let savedduetime = change.doc.data().duetime;
+            let resulttext = change.doc.data().result;
 
             // Event removes from database
             deletebutton.addEventListener('click', () => {
@@ -229,13 +231,18 @@ auth.onAuthStateChanged(user => {
             });
 
             itemtitle.innerHTML = change.doc.data().title;
-            times.innerHTML = "<b>Start</b> at " + to12HourFormat(savedstarttime) + " on " + savedstartdate;
-            times.innerHTML += "</br><b>Due</b> at " + to12HourFormat(savedduetime) + " on " + savedduedate;
+            timestart.innerHTML = "<b>Start</b> at " + to12HourFormat(savedstarttime) + " on " + savedstartdate + "</br>";
+            timedue.innerHTML = "<b>Due</b> at " + to12HourFormat(savedduetime) + " on " + savedduedate + "</br>";
+            result.innerHTML = resulttext;
+
 
             // Appending elements to item card
             itemcard.appendChild(itemtitle);
-            itemcard.appendChild(times);
+            itemcard.appendChild(timestart);
+            itemcard.appendChild(timedue);
+
             itemcard.appendChild(deletebutton);
+            itemcard.appendChild(result);
             donelist.appendChild(itemcard);
 
           }
