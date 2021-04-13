@@ -28,12 +28,10 @@ body {
 
 .listcontainer {
   padding: 1rem;
-
 }
 
 .container .material-icons {
   font-size: 24px;
-
 }
 
 .footer {
@@ -42,4 +40,31 @@ body {
 
 .nav-pills .nav-link.active {
   background-color: rgba(13, 110, 253, 0.75) !important;
+}
+
+.itemcard {
+  background-color: rgba(13, 110, 253, 0.20);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.itemcard h4 {
+  background-color: white;
+  border-radius: 5px;
+  padding: 7px;
+}
+
+.itemcard span {
+
+  font-size: 14px;
+}
+
+.itemcard button {
+  border-style: none;
+  background-color: transparent;
+  color: ;
+}
+
+.itemcard i {
+  font-size: 48px;
 }

@@ -121,7 +121,7 @@ function timeSpent(duedate, duetime) {
         result += `You finished LATE by ${Math.abs(resulthour)} hours and ${Math.abs(resultminute)} minutes!`;
       }
     } else {
-      result += "You finished LATE by more than 5 hours, try rescheduling the task!"
+      result += "Your due date and time was off more than 5 hours, try scheduling for a reasonable amount of time!"
     }
   }
   return result;
@@ -152,8 +152,8 @@ auth.onAuthStateChanged(user => {
 
             // Showing the date and times for the item
             itemtitle.innerHTML = change.doc.data().title;
-            times.innerHTML = "<b>Start</b> at " + to12HourFormat(savedstarttime) + " on <i>" + savedstartdate + "</i>";
-            times.innerHTML += "</br><b>Due</b> at " + to12HourFormat(savedduetime) + " on <i>" + savedduedate + "</i>";
+            times.innerHTML = "<b>Start</b> at " + to12HourFormat(savedstarttime) + " on " + savedstartdate;
+            times.innerHTML += "</br><b>Due</b> at " + to12HourFormat(savedduetime) + " on " + savedduedate;
 
 
 
@@ -229,8 +229,8 @@ auth.onAuthStateChanged(user => {
             });
 
             itemtitle.innerHTML = change.doc.data().title;
-            times.innerHTML = "<b>Start</b> at " + to12HourFormat(savedstarttime) + " on <i>" + savedstartdate + "</i>";
-            times.innerHTML += "</br><b>Due</b> at " + to12HourFormat(savedduetime) + " on <i>" + savedduedate + "</i>";
+            times.innerHTML = "<b>Start</b> at " + to12HourFormat(savedstarttime) + " on " + savedstartdate;
+            times.innerHTML += "</br><b>Due</b> at " + to12HourFormat(savedduetime) + " on " + savedduedate;
 
             // Appending elements to item card
             itemcard.appendChild(itemtitle);
