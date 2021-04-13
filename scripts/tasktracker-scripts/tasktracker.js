@@ -99,7 +99,7 @@ function timeSpent(duedate, duetime) {
       result += `You finished LATE by ${resultminute} mins!`
     }
     // Completed same day, late
-  } else if (resultday == 0 && resulthour > 0) {
+  } else if (resultday == 0 && resulthour > 0 && resulthour < 6) {
     if (todayminute < dueminute) {
       resulthour -= 1;
       resultminute = (todayminute + 60) - dueminute;
