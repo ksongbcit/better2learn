@@ -3,3 +3,12 @@
 
 # make api keys private
 scripts/firebase-api.js
+
+# hosting files
+.firebase
+.firebase/hosting..cache
+.firebaserc
+404.html
+firebase.json
+firestore.indexes.json
+firestore.rules
