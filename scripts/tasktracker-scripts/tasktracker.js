@@ -82,7 +82,7 @@ function timeSpent(duedate, duetime) {
   let result = "";
 
   // Completed same day, early
-  if (resultday == 0 && resulthour < 0) {
+  if (resultday == 0 && resulthour < 0 && resulthour > -6) {
     if (todayminute > dueminute) {
       resulthour += 1;
       resultminute = todayminute - (dueminute + 60);
