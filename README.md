@@ -1,6 +1,8 @@
 ## My Web Application : BetterToLearn
 ## Authors: Kyung Min Song & Avneet Sandhu
 
+*** THIS REPOSITORY IS ARCHIVED ***
+
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
